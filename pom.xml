@@ -34,13 +34,7 @@
         <artifactId>webdrivermanager</artifactId>
         <version>5.3.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.5</version>
-        <scope>test</scope>
-    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
     <dependency>
         <groupId>org.apache.poi</groupId>
