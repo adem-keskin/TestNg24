@@ -8,8 +8,8 @@ import techproed.utilities.Driver;
 
 
 
-    public class MyAccountPage {
-        public MyAccountPage() {
+    public class AllureAccountPage {
+        public AllureAccountPage() {
             PageFactory.initElements(Driver.getDriver(), this);
         }
 
@@ -60,6 +60,12 @@ import techproed.utilities.Driver;
 
         @FindBy(css = "div[role='alert']")
         public WebElement alertBox;
+
+        @FindBy(xpath = "//span[@class='icon-box-icon icon-orders']")
+        public WebElement ordersButton;
+
+        @FindBy(xpath = "//a[@class='btn btn-dark btn-rounded btn-icon-right continue-shopping mb-4 mt-6']")
+        public WebElement goShopButton;
 
 
 
