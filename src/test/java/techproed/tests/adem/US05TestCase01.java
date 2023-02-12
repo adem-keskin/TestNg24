@@ -9,13 +9,11 @@ import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
 public class US05TestCase01 {
-
- @Test
+    @Test
     public void US05_TC01(){
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         MyAccountPage myAccountPage = new MyAccountPage();
-
 
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
 
@@ -60,6 +58,7 @@ public class US05TestCase01 {
         Assert.assertEquals(myAccountPage.alertBox.getText(), "Account details changed successfully.");
         ReusableMethods.waitFor(3);
 
+        myAccountPage.singInButton.submit();
 
 
     }
