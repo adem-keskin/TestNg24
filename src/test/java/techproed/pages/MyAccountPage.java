@@ -16,6 +16,9 @@ import techproed.utilities.Driver;
         @FindBy(xpath = "//h2[@class='page-title']")
         public WebElement myAccountText;
 
+        @FindBy(css = ".icon-box-icon.icon-account")
+        public WebElement accountDetailsButton;
+
         @FindBy(xpath = "//input[@id='username']")
         public WebElement usernameBox;
 
@@ -24,6 +27,42 @@ import techproed.utilities.Driver;
 
         @FindBy(xpath = "//button[@name='login']")
         public WebElement singInButton;
+
+        @FindBy(xpath = "//input[@id='rememberme']")
+        public WebElement rememberMeBox;
+
+        @FindBy(xpath = "//*[@name='account_first_name']")
+        public WebElement firstNameBox;
+
+        @FindBy(xpath = "//*[@name='account_last_name']")
+        public WebElement lastNameBox;
+
+        @FindBy(xpath = "//*[@name='account_display_name']")
+        public WebElement displayNameBox;
+
+        @FindBy(id = "tinymce")
+        public WebElement descriptionBox;
+
+        @FindBy(xpath = "//*[@name='account_email']")
+        public WebElement emailBox;
+
+        @FindBy(xpath = "//input[@id='password_current']")
+        public WebElement currentPasswordBox;
+
+        @FindBy(xpath = "//input[@id='password_1']")
+        public WebElement changePasswordButton;
+
+        @FindBy(xpath = "//input[@id='password_2']")
+        public WebElement confirmChangePasswordButton;
+
+        @FindBy(xpath = "//button[@value='Save changes']")
+        public WebElement saveChangesButton;
+
+        @FindBy(css = "div[role='alert']")
+        public WebElement alertBox;
+
+
+
 
     }
 
