@@ -58,8 +58,5 @@ public class US05TestCase01 {
         Assert.assertEquals(myAccountPage.alertBox.getText(), "Account details changed successfully.");
         ReusableMethods.waitFor(3);
 
-        myAccountPage.singInButton.submit();
-
-
     }
 }
