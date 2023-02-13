@@ -8,7 +8,13 @@ import techproed.pages.MedineStoreManagerPage01;
 
 public class MedineReusable {
 
-
+    public static void waitFor(int sec) {
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     /*
     SIGN IN
     1. Kullanici Url'e gider.
@@ -27,10 +33,13 @@ public class MedineReusable {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
         product.signInButton.click();
+        waitFor(2);
         Assert.assertTrue(product.signInPage.isDisplayed());
         product.signInUsername.sendKeys("testneteam24@yahoo.com", Keys.TAB);
         product.signInPassword.sendKeys("qateam2424", Keys.ENTER);
+        waitFor(2);
         product.myAccountButton.click();
+        waitFor(2);
         Assert.assertTrue(product.helloText.isDisplayed());
 
 
@@ -43,12 +52,14 @@ public class MedineReusable {
     12. Kullanici soldaki menuden Product yazisina tiklar .
     13. Kullanici Product sayfasinda oldugunu dogrular.
      */
-    public static void storeManager() {
+    public static void storeManager()  {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
         product2.storeManagerButton.click();
+        waitFor(2);
         Assert.assertTrue(product2.storeManagerText.isDisplayed());
         product2.productsButton.click();
+        waitFor(2);
         Assert.assertTrue(product2.productsText.isDisplayed());
 
     }
@@ -62,6 +73,7 @@ public class MedineReusable {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
         product2.addNewProductDashboardButton.click();
+        waitFor(2);
         Assert.assertTrue(product2.addProductText.isDisplayed());
 
     }

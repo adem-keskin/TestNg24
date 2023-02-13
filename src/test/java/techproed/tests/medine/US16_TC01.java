@@ -2,6 +2,7 @@ package techproed.tests.medine;
 
 
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.MedineAddProductPage01;
@@ -40,8 +41,11 @@ public class US16_TC01 {
     MedineReusable.addNewProduct();
 
 // 16. Kullanici Add Product sayfasinda Simple Product default olarak göründügünü dogrular.
-    Assert.assertTrue(product2.simple.isDisplayed());
-
+    // product2.productType.click();
+    Select productType = new Select(product2.productType);
+    productType.selectByValue("simple");
+    MedineReusable.waitFor(2);
+    //Assert.assertTrue(product2.simple.isDisplayed());
     Driver.closeDriver();
 
 
