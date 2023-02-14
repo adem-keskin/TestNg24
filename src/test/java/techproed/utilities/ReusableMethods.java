@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import techproed.pages.HomePageUS3;
 
 import java.io.File;
 import java.io.IOException;
@@ -244,5 +245,23 @@ public class ReusableMethods {
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + element);
         }
+    }
+
+
+    public static void loginSingIn(String email, String Password) {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        HomePageUS3 homePage3 = new HomePageUS3();
+        homePage3.signIn.click();
+        homePage3.email.sendKeys(email);
+        homePage3.password.sendKeys(Password);
+        homePage3.signInButonu.click();
+
+
+    }
+
+
+    public static void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("arguments[0].click();",element);
     }
 }
