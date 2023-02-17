@@ -26,7 +26,7 @@ public class MedineProductsPage01 {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInButton2;
 
-    @FindBy(xpath = "//li[@id='menu-item-1074']")
+    @FindBy(xpath = "(//a[text()='My Account'])[1]")
     public WebElement myAccountButton;
 
     @FindBy(xpath = "//h2[@class='page-title']")

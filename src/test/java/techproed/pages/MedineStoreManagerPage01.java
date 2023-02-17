@@ -29,5 +29,19 @@ public class MedineStoreManagerPage01 {
     @FindBy(xpath = "//h2[normalize-space()='Add Product']")
     public WebElement addProductText;
 
+    // ADDNEW PRODUCT
+
+    @FindBy(id = "product_type") // //select[@id='product_type']
+    public WebElement productType;
+
+    @FindBy(xpath = "//option[@value='simple']")
+    public WebElement simple;
+
+    @FindBy(xpath = "//option[@value='variable']")
+    public WebElement variable;
+
+    @FindBy(xpath = "//option[@value='external']")
+    public WebElement external;
+
 
 }
