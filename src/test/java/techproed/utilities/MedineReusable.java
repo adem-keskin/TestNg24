@@ -28,8 +28,9 @@ public class MedineReusable {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
         product.signInButton.click();
         Assert.assertTrue(product.signInPage.isDisplayed());
-        product.signInUsername.sendKeys("testneteam24@yahoo.com", Keys.TAB);
+        product.signInUsername.sendKeys("testngteam24@yahoo.com", Keys.TAB);
         product.signInPassword.sendKeys("qateam2424", Keys.ENTER);
+        ReusableMethods.waitFor(3);
         product.myAccountButton.click();
         Assert.assertTrue(product.helloText.isDisplayed());
 
