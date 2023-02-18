@@ -247,15 +247,25 @@ public class ReusableMethods {
         }
     }
 
+    public static void loginSingIn() {
+    HomePageUS3 homePage3 = new HomePageUS3();
+    // try {
+            Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+           homePage3 .signIn.click();
+            ReusableMethods.waitFor(2);
+           homePage3.email.sendKeys(ConfigReader.getProperty("email"));
+            ReusableMethods.waitFor(2);
+            homePage3.password.sendKeys(ConfigReader.getProperty("password"));
+            ReusableMethods.waitFor(2);
+            homePage3.signInButonu.click();
+            ReusableMethods.waitFor(2);
+    //   } catch (Exception e) {
 
-    public static void loginSingIn(String email, String Password) {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        HomePageUS3 homePage3 = new HomePageUS3();
-        homePage3.signIn.click();
-        homePage3.email.sendKeys(email);
-        homePage3.password.sendKeys(Password);
-        homePage3.signInButonu.click();
-
+//        }
+//        try {
+//            homePage3.signout.click();
+//        } catch (Exception e) {
+//        }
 
     }
 
