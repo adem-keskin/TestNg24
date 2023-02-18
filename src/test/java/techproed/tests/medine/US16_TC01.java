@@ -31,7 +31,7 @@ public class US16_TC01 {
     8. My Account yazisina tiklar.
     9. Kullanici giris yaptigini dogrular.
      */
-        MedineReusable.signIn();
+        ReusableMethods.medineSignIn();
     /*
     10. Kullanici Dashboard da bulunan menuden Store Manager butonuna tiklar.
     11. Kullanici Store Manager sayfasinda oldugunu dogrular.
@@ -40,8 +40,8 @@ public class US16_TC01 {
     14. Kullanici Add New butonuna tiklar.
     15. Kullanici Add Product sayfasinda oldugunu dogrular.
     */
-        MedineReusable.storeManager();
-        MedineReusable.addNewProduct();
+        ReusableMethods.medineStoreManager();
+        ReusableMethods.medineAddNewProduct();
 
 
         // 16. Kullanici Add Product sayfasinda Simple Product default olarak göründügünü dogrular.
