@@ -14,4 +14,16 @@ public class AllureToYouHomePage {
     @FindBy(xpath = "(//*[text()='My Account'])[1]")
     public WebElement myAccountButton;
 
+    @FindBy(xpath = "//*[@class='register inline-type']")
+    public WebElement registerButton;
+
+    @FindBy(xpath = "//*[text()='Become a Vendor']")
+    public WebElement becomeAVender;
+
+    @FindBy(xpath = "//*[@class='page-title']")
+    public WebElement vendorRegistrationTitle;
+
+
+
+
 }
