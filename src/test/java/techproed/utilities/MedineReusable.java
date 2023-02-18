@@ -21,15 +21,15 @@ public class MedineReusable {
     8. My Account yazisina tiklar.
     9. Kullanici giris yaptigini dogrular.
      */
-    public static void signIn() {
+    public static void medineSignIn() {
         MedineProductsPage01 product = new MedineProductsPage01();
         Actions actions = new Actions(Driver.getDriver());
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
         product.signInButton.click();
         Assert.assertTrue(product.signInPage.isDisplayed());
-        product.signInUsername.sendKeys("testngteam24@yahoo.com", Keys.TAB);
-        product.signInPassword.sendKeys("qateam2424", Keys.ENTER);
+        product.signInUsername.sendKeys(ConfigReader.getProperty("vendorEmail"), Keys.TAB);
+        product.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"), Keys.ENTER);
         ReusableMethods.waitFor(3);
         product.myAccountButton.click();
         Assert.assertTrue(product.helloText.isDisplayed());
@@ -44,7 +44,7 @@ public class MedineReusable {
     12. Kullanici soldaki menuden Product yazisina tiklar .
     13. Kullanici Product sayfasinda oldugunu dogrular.
      */
-    public static void storeManager() {
+    public static void medineStoreManager() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
         product2.storeManagerButton.click();
@@ -59,7 +59,7 @@ public class MedineReusable {
     14. Kullanici Add New butonuna tiklar.
     15. Kullanici Add Product sayfasinda oldugunu dogrular.
      */
-    public static void addNewProduct() {
+    public static void medineAddNewProduct() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
         product2.addNewProductDashboardButton.click();
