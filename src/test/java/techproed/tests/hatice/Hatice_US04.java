@@ -16,8 +16,8 @@ public class Hatice_US04 {
     @Test
     public void pozitiveTestUS4TC1TC2() throws IOException, InterruptedException {
 
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.waitFor(2);
@@ -48,8 +48,8 @@ public class Hatice_US04 {
 
     @Test
     public void negativeTestNotFirstNameUS4() throws IOException {
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.waitFor(2);
@@ -78,8 +78,8 @@ public class Hatice_US04 {
 
     @Test
     public void negativeTestNotLastNameUS4() throws IOException {
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
@@ -106,8 +106,8 @@ public class Hatice_US04 {
 
     @Test
     public void negativeTestNotStreetAddressUS4() throws IOException {
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
@@ -134,8 +134,8 @@ public class Hatice_US04 {
 
     @Test
     public void negativeTestNotPostCodeUS4() throws IOException {
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
@@ -163,8 +163,8 @@ public class Hatice_US04 {
 
     @Test
     public void negativeTestNotTownCityUS3() throws IOException {
-        ReusableMethods.loginSingIn(ConfigReader.getProperty("positive_email"), ConfigReader.getProperty("positive_password"));
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.loginSingIn();
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage = new HomePageUS4();
         homePage.myAccount.click();
         ReusableMethods.clickByJS(homePage.adresses);
