@@ -5,6 +5,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import techproed.pages.HomePageUS3;
+import techproed.pages.MedineProductsPage01;
+import techproed.pages.MedineStoreManagerPage01;
 
 import java.io.File;
 import java.io.IOException;
@@ -245,4 +248,87 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
+
+    public static void loginSingIn() {
+    HomePageUS3 homePage3 = new HomePageUS3();
+    // try {
+            Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+           homePage3 .signIn.click();
+            ReusableMethods.waitFor(2);
+           homePage3.email.sendKeys(ConfigReader.getProperty("email"));
+            ReusableMethods.waitFor(2);
+            homePage3.password.sendKeys(ConfigReader.getProperty("password"));
+            ReusableMethods.waitFor(2);
+            homePage3.signInButonu.click();
+            ReusableMethods.waitFor(2);
+    //   } catch (Exception e) {
+
+//        }
+//        try {
+//            homePage3.signout.click();
+//        } catch (Exception e) {
+//        }
+
+    }
+
+
+    public static void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("arguments[0].click();",element);
+    }
+
+    /*
+    SIGN IN
+    1. Kullanici Url'e gider.
+    2. Kullanici anasayfaya geldigini dogrular.
+    3. Kullanici Signin yazisina tiklar.
+    4. Kullanici Signin(login) sayfasinin acildigini dogrular.
+    5. Kullanici "Username or email address" textboxuna emailini yada username ini girer.
+    6. Kullanici password textbox'a passwordunu girer.
+    7. Kullanici SIGN IN butonuna tiklar.
+    8. My Account yazisina tiklar.
+    9. Kullanici giris yaptigini dogrular.
+     */
+    public static void medineSignIn() {
+        MedineProductsPage01 product = new MedineProductsPage01();
+        Actions actions = new Actions(Driver.getDriver());
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
+        product.signInButton.click();
+        Assert.assertTrue(product.signInPage.isDisplayed());
+        product.signInUsername.sendKeys(ConfigReader.getProperty("vendorEmail"), Keys.TAB);
+        product.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"), Keys.ENTER);
+        ReusableMethods.waitFor(3);
+        product.myAccountButton.click();
+        Assert.assertTrue(product.helloText.isDisplayed());
+    }
+
+    /*
+    STORE MANAGER-PRODUCTS
+    10. Kullanici Dashboard da bulunan menuden Store Manager butonuna tiklar.
+    11. Kullanici Store Manager sayfasinda oldugunu dogrular.
+    12. Kullanici soldaki menuden Product yazisina tiklar .
+    13. Kullanici Product sayfasinda oldugunu dogrular.
+     */
+    public static void medineStoreManager() {
+        MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
+        Actions actions = new Actions(Driver.getDriver());
+        product2.storeManagerButton.click();
+        Assert.assertTrue(product2.storeManagerText.isDisplayed());
+        product2.productsButton.click();
+        Assert.assertTrue(product2.productsText.isDisplayed());
+    }
+
+    /*
+    ADD NEW-ADD PRODUCT
+    14. Kullanici Add New butonuna tiklar.
+    15. Kullanici Add Product sayfasinda oldugunu dogrular.
+     */
+    public static void medineAddNewProduct() {
+        MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
+        Actions actions = new Actions(Driver.getDriver());
+        product2.addNewProductDashboardButton.click();
+        Assert.assertTrue(product2.addProductText.isDisplayed());
+    }
+
 }
