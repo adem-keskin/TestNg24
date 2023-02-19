@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
 import techproed.utilities.Driver;
-import techproed.utilities.MedineReusable;
 import techproed.utilities.ReusableMethods;
 
 public class US16_TC01 {
