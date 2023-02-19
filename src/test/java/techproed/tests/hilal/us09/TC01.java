@@ -2,6 +2,7 @@ package techproed.tests.hilal.us09;
 
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
+import techproed.pages.VendorRegisterPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
@@ -11,6 +12,7 @@ public class TC01 {
     public void becomeAVendorLoginTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
+        VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
 
         //01- Admin ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -19,10 +21,10 @@ public class TC01 {
         allureToYouHomePage.registerButton.click();
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVender.click();
+        allureToYouHomePage.becomeAVendor.click();
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
-        allureToYouHomePage.vendorRegistrationTitle.click();
+        vendorRegisterPage.vendorRegistrationTitle.click();
 
 
 

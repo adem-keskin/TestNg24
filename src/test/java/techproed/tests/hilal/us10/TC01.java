@@ -1,20 +1,18 @@
-package techproed.tests.hilal.us09;
+package techproed.tests.hilal.us10;
 
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.FakeMail;
 import techproed.pages.VendorRegisterPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
-public class TC02 {
+public class TC01 {
 
     @Test
-    public void getEmailTest() {
+    public void tooShortTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
-        FakeMail fakeMail = new FakeMail();
 
         //01- Admin ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -28,20 +26,18 @@ public class TC02 {
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
 
-        //05- Admin yeni sekmede ana sayfaya gider
-        Driver.getDriver().navigate().to("https://www.fakemail.net/");
+        //05- Admin password butonuna tıklar
+        vendorRegisterPage.vendorPassword.click();
 
-        //06- Admin ana sayfadaki copy butonuna tıklar
-        fakeMail.copyButton.click();
+        //06- Admin parola girer
+        vendorRegisterPage.vendorPassword.sendKeys("123");
 
-        //07- Admin ilk sekmeye geri döner
-        Driver.getDriver().navigate().back();
+        //07- Admin "too short" uyarı mesajını görür
 
-        //08- Admin email textbox ına tıklar
-        vendorRegisterPage.vendorEmail.click();
 
-        //09- Admin email adresini yapıştırır
+
 
 
     }
+
 }

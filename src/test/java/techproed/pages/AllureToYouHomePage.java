@@ -18,10 +18,15 @@ public class AllureToYouHomePage {
     public WebElement registerButton;
 
     @FindBy(xpath = "//*[text()='Become a Vendor']")
-    public WebElement becomeAVender;
+    public WebElement becomeAVendor;
 
-    @FindBy(xpath = "//*[@class='page-title']")
-    public WebElement vendorRegistrationTitle;
+    @FindBy(xpath = "//*[@class='w-icon-account']")
+    public WebElement signInButton;
+
+
+
+
+
 
 
 
