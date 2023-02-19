@@ -1,4 +1,4 @@
-package techproed.tests.kyubra;
+package techproed.tests.kyubr;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
