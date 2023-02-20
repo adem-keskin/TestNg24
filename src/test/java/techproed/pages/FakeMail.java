@@ -15,7 +15,7 @@ public class FakeMail {
     public WebElement copyButton;
 
     @FindBy(xpath = "//*[@class='animace']")
-    public WebElement fakeMail;
+    public WebElement fakeMailAddresses;
 
 
 
