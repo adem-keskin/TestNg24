@@ -1,7 +1,5 @@
 package techproed.tests.hilal.us11;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
@@ -11,10 +9,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class TC01 {
+public class TC03 {
 
     @Test
-    public void myAccountVisibility() {
+    public void dataVisibilityTest2() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         SignInPage signInPage = new SignInPage();
@@ -45,6 +43,37 @@ public class TC01 {
 
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(myAccountPage.myAccountText2.isDisplayed());
+
+        //09- Vendor My Account yazısına tıklar
+        myAccountPage.myAccountText2.click();
+
+        //10- Vendor Store Manager datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.storeManager.isDisplayed());
+
+        //11- Vendor Orders datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.orders.isDisplayed());
+
+        //12- Vendors Downloads datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.downloads.isDisplayed());
+
+        //13- Vendor Addresses datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.addresses.isDisplayed());
+
+        //14- Vendor Account details datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.accountDetails.isDisplayed());
+
+        //15- Vendor Wishlist datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.wishlist.isDisplayed());
+
+        //16- Vendor Support Tickets datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.supportTickets.isDisplayed());
+
+        //17- Vendor Followings datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.followings.isDisplayed());
+
+        //18- Vendor Logout datasını gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.logout.isDisplayed());
+
 
 
     }

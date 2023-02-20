@@ -1,5 +1,6 @@
 package techproed.tests.hilal.us09;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
 import techproed.pages.FakeMail;
@@ -10,7 +11,7 @@ import techproed.utilities.Driver;
 public class TC02 {
 
     @Test
-    public void getEmailTest() {
+    public void getFakeEmailTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
@@ -41,6 +42,12 @@ public class TC02 {
         vendorRegisterPage.vendorEmail.click();
 
         //09- Admin email adresini yapıştırır
+        Actions actions = new Actions(Driver.getDriver());
+       // actions.clickAndHold(fakeMail.fakeMail).moveToElement(vendorRegisterPage.vendorEmail).release().build().perform();
+
+
+
+
 
 
 

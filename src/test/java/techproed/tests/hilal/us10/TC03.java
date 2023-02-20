@@ -10,10 +10,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class TC02 {
+public class TC03 {
 
     @Test
-    public void weekMessageTest() {
+    public void goodMessageTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
@@ -37,11 +37,9 @@ public class TC02 {
         vendorRegisterPage.vendorPassword.click();
 
         //06- Admin parola girer
-        vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("week"));
+        vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("good"));
 
-        //07- Admin "weak" uyarı mesajını görür
-        Assert.assertTrue(vendorRegisterPage.weakMessage.isDisplayed());
-
-
+        //07- Admin "good" uyarı mesajını görür
+        Assert.assertTrue(vendorRegisterPage.goodMessage.isDisplayed());
     }
 }

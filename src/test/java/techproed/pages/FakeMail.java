@@ -14,6 +14,11 @@ public class FakeMail {
     @FindBy(xpath ="//*[@class='color cetc']")
     public WebElement copyButton;
 
+    @FindBy(xpath = "//*[@class='animace']")
+    public WebElement fakeMail;
+
+
+
 
 
 
