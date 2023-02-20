@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
+import java.nio.file.WatchEvent;
 
 
-
-    public class MyAccountPage {
+public class MyAccountPage {
         public MyAccountPage() {
             PageFactory.initElements(Driver.getDriver(), this);
         }
@@ -60,6 +60,55 @@ import techproed.utilities.Driver;
 
         @FindBy(css = "div[role='alert']")
         public WebElement alertBox;
+
+        @FindBy(xpath = "//*[@id='menu-item-1074']")
+        public WebElement myAccountText2;
+
+        @FindBy(xpath = "//*[@class='icon-box-icon icon-orders']")
+        public WebElement ordersLogo;
+
+        @FindBy(xpath = "//*[@class='icon-box-icon icon-downloads']")
+        public WebElement downloadsLogo;
+
+        @FindBy(xpath = "//*[@class='icon-box-icon icon-addresses']")
+        public WebElement addressesLogo;
+
+//      @FindBy(xpath = "//*[@class='icon-box-icon icon-account']")
+        public WebElement accountDetailsLogo;
+
+        @FindBy(xpath = "//*[@class='icon-box-icon icon-wishlist']")
+        public WebElement wishlistLogo;
+
+        @FindBy(xpath = "//*[@class='icon-box-icon icon-logout']")
+        public WebElement logoutLogo;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--wcfm-store-manager']")
+        public WebElement storeManager;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders']")
+        public WebElement orders;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads']")
+        public WebElement downloads;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address']")
+        public WebElement addresses;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account']")
+        public WebElement accountDetails;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--wishlist']")
+        public WebElement wishlist;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--support-tickets']")
+        public WebElement supportTickets;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--followings']")
+        public WebElement followings;
+
+        @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
+        public WebElement logout;
+
 
 
 

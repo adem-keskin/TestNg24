@@ -1,6 +1,7 @@
 package techproed.tests.hilal.us11;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.devtools.v85.domsnapshot.model.ArrayOfStrings;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,10 +12,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class TC01 {
+public class TC02 {
 
     @Test
-    public void myAccountVisibility() {
+    public void dataVisibilityTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         SignInPage signInPage = new SignInPage();
@@ -45,6 +46,32 @@ public class TC01 {
 
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(myAccountPage.myAccountText2.isDisplayed());
+
+        //09- Vendor My Account yazısına tıklar
+        myAccountPage.myAccountText2.click();
+
+        //10- Vendor Orders logosunu gördüğünü doğrular
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(myAccountPage.ordersLogo.isDisplayed());
+
+        //11- Vendor Downloads logosunu gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.downloadsLogo.isDisplayed());
+
+        //12- Vendors Addresses logosunu gördügünü dogrular
+        Assert.assertTrue(myAccountPage.addressesLogo.isDisplayed());
+
+        //13- Vendor Account details logosunu gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.accountDetailsButton.isDisplayed());
+
+        //14- Vendor Wishlist logosunu gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.wishlistLogo.isDisplayed());
+
+        //15- Vendor Logout logosunu gördüğünü doğrular
+        Assert.assertTrue(myAccountPage.logoutLogo.isDisplayed());
+
+
 
 
     }

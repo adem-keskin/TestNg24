@@ -22,10 +22,17 @@ public class VendorRegisterPage {
         @FindBy(xpath = "//*[@id='confirm_pwd']")
         public WebElement vendorConfirmPassword;
 
+        @FindBy(xpath = "//*[@class='short']")
+        public WebElement tooShortMessage;
 
+        @FindBy(xpath = "//*[@class='weak']")
+        public WebElement weakMessage;
 
+        @FindBy(xpath = "//*[@class='good']")
+        public WebElement goodMessage;
 
-
+        @FindBy(xpath = "//*[@class='strong']")
+        public WebElement strongMessage;
 
 
 
