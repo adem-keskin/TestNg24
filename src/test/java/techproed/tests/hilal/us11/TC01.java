@@ -1,7 +1,5 @@
 package techproed.tests.hilal.us11;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
