@@ -5,7 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureShoppingStore;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.AllureAccountPage;
+import techproed.pages.MyAccountPage;
+import techproed.pages.MyAccountPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
@@ -14,7 +15,7 @@ public class US19Test {
     public void US19_TC01(){
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
-        AllureAccountPage allureAccountPage = new AllureAccountPage();
+        MyAccountPage allureAccountPage = new MyAccountPage();
         AllureShoppingStore allureShoppingStore = new AllureShoppingStore();
 
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));

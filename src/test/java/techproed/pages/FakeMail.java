@@ -15,12 +15,20 @@ public class FakeMail {
     public WebElement copyButton;
 
     @FindBy(xpath = "//*[@class='animace']")
-    public WebElement fakeMail;
+    public WebElement fakeMailAddresses;
+
+    @FindBy(xpath = "//*[@class='hidden-xs hidden-sm klikaciRadek newMail'][1]")
+    public WebElement fakeMailNewMail;
+
+    @FindBy(xpath = "(//p[@style='margin: 0 0 16px;'])[2]")
+    private static WebElement verificationCodeInEmail;
 
 
+    public static String setVerificationCode() {
+        String[] emailCode = verificationCodeInEmail.getText().split(" ");
+        String verification = emailCode[7];
+        return verification;
 
-
-
-
+    }
 
 }

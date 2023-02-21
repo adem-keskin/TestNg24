@@ -1,7 +1,6 @@
 package techproed.tests.hilal.us11;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.devtools.v85.domsnapshot.model.ArrayOfStrings;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;

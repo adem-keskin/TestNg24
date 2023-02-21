@@ -1,11 +1,9 @@
 package techproed.tests.hilal.us09;
 
-import org.apache.poi.poifs.crypt.dsig.KeyInfoKeySelector;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
 import techproed.pages.FakeMail;
@@ -14,15 +12,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-import java.awt.event.KeyEvent;
-import java.security.Key;
-import java.security.KeyStore;
-import java.security.spec.KeySpec;
-
-public class TC02 {
+public class TC05 {
 
     @Test
-    public void getFakeEmailTest() {
+    public void passwordTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
@@ -57,8 +50,37 @@ public class TC02 {
         vendorRegisterPage.vendorEmail.click();
 
         //09- Admin email adresini yapıştırır
-        WebElement emailde = Driver.getDriver().findElement(By.id("user_email"));
-        emailde.sendKeys(Keys.COMMAND + "V");
+        vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
+
+        //10- Admin re-send code butonuna tıklar
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.ARROW_DOWN).perform();
+        vendorRegisterPage.reSendCode.click();
+
+        //11- Admin "Verification code sent to your email:" uyarı mesajını alır
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorRegisterPage.reSendCode.isDisplayed());
+
+        //12- Admin ikinci sekmeye geri döner
+        ReusableMethods.waitFor(2);
+        Driver.getDriver().switchTo().window(window2);
+        Driver.getDriver().navigate().refresh();
+
+        //13- Admin gelen email deki verification code unu kopyalar
+        fakeMail.fakeMailNewMail.click();
+        Driver.getDriver().switchTo().frame(1);
+        String verification = FakeMail.setVerificationCode();
+        Driver.getDriver().switchTo().defaultContent();
+
+        //14- Admin ilk sekmeye geri döner
+        Driver.getDriver().switchTo().window(window1);
+
+        //15- Admin verification code textbox ına kodu yapıştırır
+        ReusableMethods.typeWithJS(vendorRegisterPage.verificationCodeTextBox, verification);
+
+        //16- Admin password textbox ına valid bir değer girer
+        vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
+
 
 
 
