@@ -9,8 +9,7 @@ import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
 public class US06_TC001 {
-
-    //Kullanici anasayfayi acar
+//Kullanici anasayfayi acar
 //Kullanici 'search box' kutusuna tiklar
 //Kullanici  'search box'  kutusuna urun adi girer
 //Kullanici girmis oldugu urunun sayfasina gider

@@ -43,5 +43,18 @@ public class MedineStoreManagerPage01 {
     @FindBy(xpath = "//option[@value='external']")
     public WebElement external;
 
+    @FindBy(xpath = "//input [@id='is_virtual']")
+    public WebElement virtualCheckbox;
+
+    @FindBy(xpath = "//input [@id='is_downloadable']")
+    public WebElement downloadableCheckbox;
+
+    @FindBy(xpath = "//input[@id='regular_price']")
+    public WebElement regularPriceTextBox;
+
+    @FindBy(xpath = "//input[@id='sale_price']")
+    public WebElement salePriceTextBox;
+
+
 
 }
