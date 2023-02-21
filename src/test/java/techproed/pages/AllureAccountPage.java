@@ -67,6 +67,15 @@ import techproed.utilities.Driver;
         @FindBy(xpath = "//a[@class='btn btn-dark btn-rounded btn-icon-right continue-shopping mb-4 mt-6']")
         public WebElement goShopButton;
 
+        @FindBy(xpath ="//div[@class='product-loop product-default content-center product type-product post-14638 status-publish onbackorder product_cat-phone has-post-thumbnail sale shipping-taxable purchasable product-type-simple']//img[2]")
+        public WebElement product_select;
+
+        @FindBy(xpath = "//button[@name='add-to-cart']")
+        public WebElement addToCart;
+
+        @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
+        public WebElement addressesIcon;
+
 
 
 
