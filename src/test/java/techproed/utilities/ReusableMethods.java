@@ -4,16 +4,13 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
-<<<<<<< HEAD
 import techproed.pages.HomePageUS3;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
 
-=======
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
->>>>>>> adem
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -226,7 +223,6 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
-<<<<<<< HEAD
 
     public static void loginSingIn() {
     HomePageUS3 homePage3 = new HomePageUS3();
@@ -315,8 +311,6 @@ public class ReusableMethods {
         Assert.assertTrue(product2.addProductText.isDisplayed());
     }
 
-}
-=======
     public static void uploadFilePath(String filePath){
         try{
             ReusableMethods.waitFor(3);
@@ -346,4 +340,3 @@ public class ReusableMethods {
         }
     }
 }
->>>>>>> adem
