@@ -8,8 +8,8 @@ import techproed.utilities.Driver;
 
 
 
-    public class AllureAccountPage {
-        public AllureAccountPage() {
+    public class AllureAccountPage_a {
+        public AllureAccountPage_a() {
             PageFactory.initElements(Driver.getDriver(), this);
         }
 

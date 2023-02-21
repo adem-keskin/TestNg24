@@ -3,7 +3,7 @@ package techproed.tests.adem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.AllureAccountPage;
+import techproed.pages.AllureAccountPage_a;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
@@ -12,7 +12,7 @@ public class US19Test {
     public void US19_TC01(){
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
-        AllureAccountPage allureAccountPage = new AllureAccountPage();
+        AllureAccountPage_a allureAccountPage = new AllureAccountPage_a();
 
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
 
