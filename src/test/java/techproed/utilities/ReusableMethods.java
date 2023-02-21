@@ -1,14 +1,19 @@
 package techproed.utilities;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+<<<<<<< HEAD
 import techproed.pages.HomePageUS3;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
 
+=======
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+>>>>>>> adem
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -18,10 +23,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
-
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
-
 public class ReusableMethods {
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
@@ -36,7 +39,6 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
-
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -48,13 +50,11 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
-
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
-
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -65,7 +65,6 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
-
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -77,9 +76,8 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
-
     //   HARD WAIT WITH THREAD.SLEEP
-    //   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
+//   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
     public static void waitFor(int sec) {
         try {
             Thread.sleep(sec * 1000);
@@ -87,28 +85,23 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
-
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
-
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -119,7 +112,6 @@ public class ReusableMethods {
             }
         }
     }
-
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -135,7 +127,6 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
-
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
@@ -150,7 +141,6 @@ public class ReusableMethods {
         });
         return element;
     }
-
     /**
      * Performs double click action on an element
      * @param element
@@ -158,12 +148,10 @@ public class ReusableMethods {
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
-
     /**
      * @param element
      * @param check
      */
-
     public static void selectCheckBox(WebElement element, boolean check) {
         if (check) {
             if (!element.isSelected()) {
@@ -175,13 +163,11 @@ public class ReusableMethods {
             }
         }
     }
-
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
      * @param select
      * @return
      */
-
     public static WebElement selectRandomTextFromDropdown(Select select) {
         Random random = new Random();
         List<WebElement> weblist = select.getOptions();
@@ -189,14 +175,12 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
-
     /**
      * Verifies whether the element matching the provided locator is displayed on page
      * fails if the element matching the provided locator is not found or not displayed
      *
      * @param by
      */
-
     public static void verifyElementDisplayed(By by) {
         try {
             assertTrue("Element not visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
@@ -204,14 +188,12 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + by);
         }
     }
-
     /**
      * Verifies whether the element matching the provided locator is NOT displayed on page
      * fails if the element matching the provided locator is not found or not displayed
      *
      * @param by
      */
-
     public static void verifyElementNotDisplayed(By by) {
         try {
             assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
@@ -219,13 +201,11 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-
     /**
      * Verifies whether the element matching the provided WebElement is NOT displayed on page
      * fails if the element matching the WebElement is not found or not displayed
      * @paramWebElement
      */
-
     public static void verifyElementNotDisplayed(WebElement element) {
         try {
             assertFalse("Element should not be visible: " + element, element.isDisplayed());
@@ -233,14 +213,12 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-
     /**
      * Verifies whether the element is displayed on page
      * fails if the element is not found or not displayed
      *
      * @param element
      */
-
     public static void verifyElementDisplayed(WebElement element) {
         try {
             assertTrue("Element not visible: " + element, element.isDisplayed());
@@ -248,6 +226,7 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
+<<<<<<< HEAD
 
     public static void loginSingIn() {
     HomePageUS3 homePage3 = new HomePageUS3();
@@ -332,3 +311,34 @@ public class ReusableMethods {
     }
 
 }
+=======
+    public static void uploadFilePath(String filePath){
+        try{
+            ReusableMethods.waitFor(3);
+            StringSelection stringSelection = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Robot robot = new Robot();
+            //pressing ctrl+v
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            ReusableMethods.waitFor(3);
+            robot.keyPress(KeyEvent.VK_V);
+            ReusableMethods.waitFor(3);
+            //releasing ctrl+v
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            ReusableMethods.waitFor(3);
+            robot.keyRelease(KeyEvent.VK_V);
+            ReusableMethods.waitFor(3);
+            System.out.println("PASSED");
+            //pressing enter
+            ReusableMethods.waitFor(3);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            ReusableMethods.waitFor(3);
+            //releasing enter
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            ReusableMethods.waitFor(3);
+            System.out.println("ENTER");
+        }catch (Exception e){
+        }
+    }
+}
+>>>>>>> adem

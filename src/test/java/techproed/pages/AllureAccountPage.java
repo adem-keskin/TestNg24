@@ -8,8 +8,14 @@ import techproed.utilities.Driver;
 import java.nio.file.WatchEvent;
 
 
+<<<<<<< HEAD:src/test/java/techproed/pages/MyAccountPage.java
 public class MyAccountPage {
         public MyAccountPage() {
+=======
+
+    public class AllureAccountPage {
+        public AllureAccountPage() {
+>>>>>>> adem:src/test/java/techproed/pages/AllureAccountPage.java
             PageFactory.initElements(Driver.getDriver(), this);
         }
 
@@ -61,6 +67,7 @@ public class MyAccountPage {
         @FindBy(css = "div[role='alert']")
         public WebElement alertBox;
 
+<<<<<<< HEAD:src/test/java/techproed/pages/MyAccountPage.java
         @FindBy(xpath = "//*[@id='menu-item-1074']")
         public WebElement myAccountText2;
 
@@ -109,6 +116,22 @@ public class MyAccountPage {
         @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
         public WebElement logout;
 
+=======
+        @FindBy(xpath = "//span[@class='icon-box-icon icon-orders']")
+        public WebElement ordersButton;
+
+        @FindBy(xpath = "//a[@class='btn btn-dark btn-rounded btn-icon-right continue-shopping mb-4 mt-6']")
+        public WebElement goShopButton;
+
+        @FindBy(xpath ="//div[@class='product-loop product-default content-center product type-product post-14638 status-publish onbackorder product_cat-phone has-post-thumbnail sale shipping-taxable purchasable product-type-simple']//img[2]")
+        public WebElement product_select;
+
+        @FindBy(xpath = "//button[@name='add-to-cart']")
+        public WebElement addToCart;
+
+        @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
+        public WebElement addressesIcon;
+>>>>>>> adem:src/test/java/techproed/pages/AllureAccountPage.java
 
 
 
