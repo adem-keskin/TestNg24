@@ -277,6 +277,11 @@ public class ReusableMethods {
         js.executeScript("arguments[0].click();",element);
     }
 
+    public static void typeWithJS(WebElement element, String text) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].setAttribute('value','" + text + "');", element);
+    }
+
     /*
     SIGN IN
     1. Kullanici Url'e gider.

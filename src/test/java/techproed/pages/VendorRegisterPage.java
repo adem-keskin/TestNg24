@@ -19,8 +19,20 @@ public class VendorRegisterPage {
         @FindBy(xpath = "//*[@id='passoword']")
         public WebElement vendorPassword;
 
+        @FindBy(xpath = "//*[@class='wcfm-text wcfm_submit_button wcfm_email_verified_button']")
+        public WebElement reSendCode;
+
+        @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-success']")
+        public WebElement verificationMessage;
+
+        @FindBy(xpath = "(//input[@data-required='1'])[2]")
+        public WebElement verificationCodeTextBox;
+
         @FindBy(xpath = "//*[@id='confirm_pwd']")
         public WebElement vendorConfirmPassword;
+
+        @FindBy(xpath = "//*[@id='wcfm_membership_register_button']")
+        public WebElement registerButton;
 
         @FindBy(xpath = "//*[@class='short']")
         public WebElement tooShortMessage;
