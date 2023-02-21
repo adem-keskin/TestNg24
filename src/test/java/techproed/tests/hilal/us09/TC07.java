@@ -89,7 +89,8 @@ public class TC07 {
         //18- Admin register butonuna tıklar
        // vendorRegisterPage.registerButton.click();
 
-        //19- Admin "Registration Successfully Completed." yazısını görür
+        //19- Admin "Registration Successfully Completed." yazısını görür..
+
 
 
 
