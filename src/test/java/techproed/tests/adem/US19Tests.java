@@ -23,9 +23,9 @@ public class US19Tests {
         allureToYouHomePage.myAccountButton.click();
         Assert.assertTrue(allureAccountPage.myAccountText.isDisplayed());
 
-        allureAccountPage.usernameBox.sendKeys(ConfigReader.getProperty("vendoremail"));
+        allureAccountPage.usernameBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
 
-        allureAccountPage.passwordBox.sendKeys(ConfigReader.getProperty("vendorpassword"));
+        allureAccountPage.passwordBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         allureAccountPage.rememberMeBox.click();
 
