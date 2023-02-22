@@ -29,13 +29,13 @@ public class TC01 {
         signInPage.signInEmailTextBox.click();
 
         //04- Vendor textbox a email adresini girer
-        signInPage.signInEmailTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        signInPage.signInEmailTextBox.sendKeys();
 
         //05- Vendor Password textbox ına tıklar
         signInPage.signInPassword.click();
 
         //06- Vendor textbox a parolasını girer
-        signInPage.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        signInPage.signInPassword.sendKeys();
 
         //07- Vendor Sign In butonuna tıklar
         signInPage.signInButton.click();

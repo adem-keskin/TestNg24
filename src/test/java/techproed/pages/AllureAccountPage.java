@@ -122,6 +122,5 @@ public class AllureAccountPage {
 
     @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
     public WebElement addressesIcon;
-
 }
 
