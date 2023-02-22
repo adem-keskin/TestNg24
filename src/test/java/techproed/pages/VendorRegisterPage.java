@@ -7,7 +7,7 @@ import techproed.utilities.Driver;
 
 public class VendorRegisterPage {
         public VendorRegisterPage(){
-            PageFactory.initElements(Driver.getDriver(),this);
+                PageFactory.initElements(Driver.getDriver(),this);
         }
 
         @FindBy(xpath = "//*[@class='page-title']")
@@ -59,6 +59,12 @@ public class VendorRegisterPage {
 
 
 }
+
+
+
+
+
+
 
 
 

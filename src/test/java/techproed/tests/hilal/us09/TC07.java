@@ -88,6 +88,8 @@ public class TC07 {
         vendorRegisterPage.vendorConfirmPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
 
         //18- Admin register butonuna tıklar
+        // vendorRegisterPage.registerButton.click();
+
        // vendorRegisterPage.registerButton.click();
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
 
