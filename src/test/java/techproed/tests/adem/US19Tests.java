@@ -14,6 +14,7 @@ public class US19Tests {
     public void US19_TC01(){
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
+
         AllureAccountPage allureAccountPage = new AllureAccountPage();
         AllureShoppingStore allureShoppingStore = new AllureShoppingStore();
 
