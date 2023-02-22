@@ -123,6 +123,14 @@ public class MyAccountPage {
     @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
     public WebElement addressesIcon;
 
+    @FindBy(xpath = "//*[@class='login logout inline-type']")
+    public WebElement signOut;
+
+    @FindBy(linkText = "Log out")
+    public WebElement logOut;
+
+
+
 
 
 }
