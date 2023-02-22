@@ -12,10 +12,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class TC07 {
+public class TC08 {
 
     @Test
-    public void registerCompletedTest() {
+    public void alreadyExistsTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
@@ -92,8 +92,32 @@ public class TC07 {
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
 
         //19- Admin "Registration Successfully Completed." yazısını görür
-        ReusableMethods.waitFor(2);
         Assert.assertTrue(vendorRegisterPage.registrationSuccessfully.isDisplayed());
+
+        //20- Admin sayfayı refresh eder
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().navigate().back();
+        Driver.getDriver().navigate().refresh();
+//        vendorRegisterPage.notRightNowButton.click();
+//        allureToYouHomePage.registerButton.click();
+//        vendorRegisterPage.vendorRegistrationTitle.click();
+//        allureToYouHomePage.becomeAVendor.click();
+
+
+
+        //21- Admin aynı bilgiler tekrar girer
+        ReusableMethods.waitFor(3);
+        vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
+        vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
+        vendorRegisterPage.vendorConfirmPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
+        ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
+        ReusableMethods.waitFor(3);
+
+        //22- Admin "This Email already exists. Please login to the site and apply as vendor." yazısını görür
+        Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
+        ReusableMethods.waitFor(3);
+
+
 
 
     }
