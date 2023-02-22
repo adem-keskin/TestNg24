@@ -5,17 +5,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
-import java.nio.file.WatchEvent;
 
 
-<<<<<<< HEAD:src/test/java/techproed/pages/MyAccountPage.java
+
+
 public class MyAccountPage {
         public MyAccountPage() {
-=======
+
 
     public class AllureAccountPage {
         public AllureAccountPage() {
->>>>>>> adem:src/test/java/techproed/pages/AllureAccountPage.java
+
             PageFactory.initElements(Driver.getDriver(), this);
         }
 
@@ -67,7 +67,7 @@ public class MyAccountPage {
         @FindBy(css = "div[role='alert']")
         public WebElement alertBox;
 
-<<<<<<< HEAD:src/test/java/techproed/pages/MyAccountPage.java
+
         @FindBy(xpath = "//*[@id='menu-item-1074']")
         public WebElement myAccountText2;
 
@@ -116,7 +116,7 @@ public class MyAccountPage {
         @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
         public WebElement logout;
 
-=======
+
         @FindBy(xpath = "//span[@class='icon-box-icon icon-orders']")
         public WebElement ordersButton;
 
@@ -131,7 +131,6 @@ public class MyAccountPage {
 
         @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
         public WebElement addressesIcon;
->>>>>>> adem:src/test/java/techproed/pages/AllureAccountPage.java
 
 
 
