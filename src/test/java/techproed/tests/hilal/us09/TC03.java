@@ -64,11 +64,5 @@ public class TC03 {
         Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
 
 
-
-        //10- Admin verification code textbox ına tıklar
-        //11- Admin "Verification code sent to your email: enson.andel@foundtoo.com." uyarı mesajını alır
-
-
-
     }
 }
