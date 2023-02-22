@@ -5,11 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
+
 public class AllureAccountPage {
+
 
     public AllureAccountPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
     @FindBy(xpath = "//h2[@class='page-title']")
     public WebElement myAccountText;
@@ -50,8 +53,10 @@ public class AllureAccountPage {
     @FindBy(xpath = "//input[@id='password_1']")
     public WebElement changePasswordButton;
 
+
     @FindBy(xpath = "//input[@id='password_2']")
     public WebElement confirmChangePasswordButton;
+
 
     @FindBy(xpath = "//button[@value='Save changes']")
     public WebElement saveChangesButton;
@@ -96,8 +101,10 @@ public class AllureAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads']")
     public WebElement downloads;
 
+
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address']")
     public WebElement addresses;
+
 
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account']")
     public WebElement accountDetails;
@@ -108,8 +115,10 @@ public class AllureAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--support-tickets']")
     public WebElement supportTickets;
 
+
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--followings']")
     public WebElement followings;
+
 
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
     public WebElement logout;
