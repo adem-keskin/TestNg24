@@ -3,13 +3,13 @@ package techproed.tests.adem;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureShoppingStore;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.AllureAccountPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
-public class US19Test {
+public class US19Tests {
     @Test
     public void US19_TC01(){
 
@@ -34,10 +34,12 @@ public class US19Test {
 
         allureAccountPage.goShopButton.click();
 
-        allureShoppingStore.searchBox.sendKeys(ConfigReader.getProperty("product"));        //TC1
+        allureShoppingStore.searchBox.sendKeys("iphone",Keys.ENTER);        //TC1
 
-        allureAccountPage.addToCart.click();
+       // allureAccountPage.addToCart.click();
         
+
+
 
     }
 }

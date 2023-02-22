@@ -1,11 +1,9 @@
 package techproed.tests.hilal.us11;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.MyAccountPage;
 import techproed.pages.SignInPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -18,7 +16,7 @@ public class TC01 {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         SignInPage signInPage = new SignInPage();
-        MyAccountPage myAccountPage = new MyAccountPage();
+        AllureAccountPage allureAccountPage= new AllureAccountPage();
 
         //01- Vendor ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -44,7 +42,7 @@ public class TC01 {
         ReusableMethods.waitFor(2);
 
         //08- Vendor My Account yazısını görür
-        Assert.assertTrue(myAccountPage.myAccountText2.isDisplayed());
+        Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
 
 
     }
