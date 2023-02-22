@@ -78,9 +78,6 @@ public class AllureAccountPage {
     @FindBy(xpath = "//*[@class='icon-box-icon icon-addresses']")
     public WebElement addressesLogo;
 
-    //      @FindBy(xpath = "//*[@class='icon-box-icon icon-account']")
-    public WebElement accountDetailsLogo;
-
     @FindBy(xpath = "//*[@class='icon-box-icon icon-wishlist']")
     public WebElement wishlistLogo;
 
@@ -114,13 +111,35 @@ public class AllureAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
     public WebElement logout;
 
-    @FindBy(xpath = "//div[@class='product-loop product-default content-center product type-product post-14638 status-publish onbackorder product_cat-phone has-post-thumbnail sale shipping-taxable purchasable product-type-simple']//img[2]")
-    public WebElement product_select;
-
     @FindBy(xpath = "//button[@name='add-to-cart']")
     public WebElement addToCart;
 
+    @FindBy(xpath = "//a[@class='cart-toggle']//i[@class='w-icon-cart']")
+    public WebElement addToCartBox;
+
     @FindBy(xpath = "//span[@class='icon-box-icon icon-addresses']")
     public WebElement addressesIcon;
+
+    @FindBy(xpath = "//a[normalize-space()='Edit Your Billing Address']")
+    public WebElement adressEditing;
+
+    @FindBy(xpath = "//button[@name='save_address']")
+    public WebElement saveAdress;
+
+    @FindBy(xpath = "//a[@class='woocommerce-button btn btn-default btn-rounded btn-outline btn-sm btn-block view']")
+    public WebElement viewButton;
+
+    @FindBy(xpath = "//h2[@class='woocommerce-order-details__title']")
+    public WebElement orderDetailText;
+
+    @FindBy(xpath = "//a[@class='button checkout wc-forward']")
+    public WebElement checkOutBox;
+
+    @FindBy(xpath = "//input[@id='payment_method_cod']")
+    public WebElement payAtTheDoor;
+
+    @FindBy(xpath = "//button[@id='place_order']")
+    public WebElement placeOrderButton;
+
 }
 

@@ -23,12 +23,7 @@ public class AllureToYouHomePage {
     @FindBy(xpath = "//*[@class='w-icon-account']")
     public WebElement signInButton;
 
-
-
-
-
-
-
-
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement singInTextButton;
 
 }
