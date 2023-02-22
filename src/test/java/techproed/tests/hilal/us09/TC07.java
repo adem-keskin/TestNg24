@@ -1,8 +1,6 @@
 package techproed.tests.hilal.us09;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -14,10 +12,10 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class TC03 {
+public class TC07 {
 
     @Test
-    public void verificationCodeSentTest() {
+    public void registerCompletedTest() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
@@ -61,7 +59,43 @@ public class TC03 {
 
         //11- Admin "Verification code sent to your email:" uyarı mesajını alır
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
+        Assert.assertTrue(vendorRegisterPage.reSendCode.isDisplayed());
+
+        //12- Admin ikinci sekmeye geri döner
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().switchTo().window(window2);
+        Driver.getDriver().navigate().refresh();
+
+        //13- Admin gelen email deki verification code unu kopyalar
+        fakeMail.fakeMailNewMail.click();
+        Driver.getDriver().switchTo().frame(1);
+        String verification = FakeMail.setVerificationCode();
+        Driver.getDriver().switchTo().defaultContent();
+
+        //14- Admin ilk sekmeye geri döner
+        Driver.getDriver().switchTo().window(window1);
+
+        //15- Admin verification code textbox ına kodu yapıştırır
+        ReusableMethods.waitFor(2);
+        ReusableMethods.typeWithJS(vendorRegisterPage.verificationCodeTextBox, verification);
+
+        //16- Admin password textbox ına valid bir değer girer
+        vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
+        actions.keyDown(Keys.ARROW_DOWN).perform();
+        actions.keyDown(Keys.ARROW_DOWN).perform();
+
+        //17- Admin confirm password hesabına valid bir değeri tekrar girer
+        vendorRegisterPage.vendorConfirmPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
+
+        //18- Admin register butonuna tıklar
+        // vendorRegisterPage.registerButton.click();
+
+       // vendorRegisterPage.registerButton.click();
+        ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
+
+        //19- Admin "Registration Successfully Completed." yazısını görür
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorRegisterPage.registrationSuccessfully.isDisplayed());
 
 
     }
