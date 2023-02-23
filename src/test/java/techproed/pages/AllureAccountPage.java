@@ -140,8 +140,6 @@ public class AllureAccountPage {
     public WebElement logOut;
 
 
-
-
     @FindBy(xpath = "//a[@class='cart-toggle']//i[@class='w-icon-cart']")
     public WebElement addToCartBox;
 
@@ -166,6 +164,19 @@ public class AllureAccountPage {
 
     @FindBy(xpath = "//button[@id='place_order']")
     public WebElement placeOrderButton;
+
+    @FindBy(xpath = "//a[@class='showcoupon']")
+    public WebElement enterYourCodeOption;
+
+    @FindBy(xpath = "//input[@name='coupon_code']")
+    public WebElement couponCodeBox;
+
+    @FindBy(xpath = "//i[@class='fas fa-check']")
+    public WebElement shoppingEndeText;
+
+    @FindBy(xpath = "//input[@aria-label='Search']")
+    public WebElement searchBox;
+
 
 }
 
