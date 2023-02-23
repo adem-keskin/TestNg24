@@ -11,9 +11,14 @@ public class SignInPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "PageFactory.initElements(Driver.getDriver(),this);")
+    @FindBy(xpath = "//*[@id='username']")
     public WebElement signInEmailTextBox;
 
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement signInPassword;
+
+    @FindBy(xpath = "//*[@name='login']")
+    public WebElement signInButton;
 
 
 }
