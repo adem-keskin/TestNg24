@@ -36,7 +36,7 @@ public class US06_TC001 {
 
     @Test
     public void US06Test (){
-        Driver.getDriver().get(ConfigReader.getProperty("allere2you_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         us06HomePage = new US06HomePage();
         us06HomePage.searchbox.click();
         us06HomePage.searchbox.sendKeys("Apple MacBook Pro 2015", Keys.ENTER);
