@@ -13,6 +13,4 @@ public class AllureShoppingStore {
     @FindBy(xpath = "//input[@aria-label='Search']")
     public WebElement searchBox;
 
-    @FindBy(css = "button[aria-label='Search Button'] i[class='w-icon-search']")
-    public WebElement searchButton;
 }

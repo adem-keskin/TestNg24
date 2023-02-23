@@ -5,12 +5,16 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
 import techproed.pages.FakeMail;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.VendorRegisterPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
+
+import java.awt.geom.RectangularShape;
 
 public class TC08 {
 
@@ -20,6 +24,7 @@ public class TC08 {
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
         FakeMail fakeMail = new FakeMail();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
 
         //01- Admin ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -71,6 +76,7 @@ public class TC08 {
         Driver.getDriver().switchTo().frame(1);
         String verification = FakeMail.setVerificationCode();
         Driver.getDriver().switchTo().defaultContent();
+        ReusableMethods.waitFor(2);
 
         //14- Admin ilk sekmeye geri döner
         Driver.getDriver().switchTo().window(window1);
@@ -96,26 +102,33 @@ public class TC08 {
 
         //20- Admin sayfayı refresh eder
         ReusableMethods.waitFor(3);
-        Driver.getDriver().navigate().back();
-        Driver.getDriver().navigate().refresh();
-//        vendorRegisterPage.notRightNowButton.click();
-//        allureToYouHomePage.registerButton.click();
-//        vendorRegisterPage.vendorRegistrationTitle.click();
-//        allureToYouHomePage.becomeAVendor.click();
+    //  Driver.getDriver().navigate().back();
+      //Driver.getDriver().navigate().refresh();
 
+        vendorRegisterPage.notRightNowButton.click();
+        ReusableMethods.waitFor(2);
+        allureAccountPage.signOut.click();
+        allureAccountPage.logOut.click();
+
+        allureToYouHomePage.registerButton.click();
+        ReusableMethods.waitFor(2);
+      //  vendorRegisterPage.vendorRegistrationTitle.click();
+        allureToYouHomePage.becomeAVendor.click();
 
 
         //21- Admin aynı bilgiler tekrar girer
         ReusableMethods.waitFor(3);
         vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
+        ReusableMethods.waitFor(2);
+        vendorRegisterPage.verificationCodeTextBox.sendKeys("123456");
+        ReusableMethods.waitFor(3);
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
         vendorRegisterPage.vendorConfirmPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
 
         //22- Admin "This Email already exists. Please login to the site and apply as vendor." yazısını görür
         Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
-        ReusableMethods.waitFor(3);
 
 
 
