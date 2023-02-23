@@ -35,7 +35,7 @@ public class US21_TC001 {
     @Test
     public void US21Test1() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("allere2you_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         us06HomePage= new US06HomePage();
         assert us06HomePage.spendingGoodYazisi.isDisplayed();//ilk sayfada oldugumuzu gostersin diye yazdim.
         us06HomePage.searchbox.click();
