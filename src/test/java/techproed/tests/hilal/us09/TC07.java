@@ -89,6 +89,8 @@ public class TC07 {
 
         //18- Admin register butonuna tıklar
         // vendorRegisterPage.registerButton.click();
+
+       // vendorRegisterPage.registerButton.click();
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
 
         //19- Admin "Registration Successfully Completed." yazısını görür

@@ -5,9 +5,10 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
 import techproed.pages.FakeMail;
-import techproed.pages.MyAccountPage;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.VendorRegisterPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -23,7 +24,7 @@ public class TC08 {
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         VendorRegisterPage vendorRegisterPage = new VendorRegisterPage();
         FakeMail fakeMail = new FakeMail();
-        MyAccountPage myAccountPage = new MyAccountPage();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
 
         //01- Admin ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -106,8 +107,8 @@ public class TC08 {
 
         vendorRegisterPage.notRightNowButton.click();
         ReusableMethods.waitFor(2);
-        myAccountPage.signOut.click();
-        myAccountPage.logOut.click();
+        allureAccountPage.signOut.click();
+        allureAccountPage.logOut.click();
 
         allureToYouHomePage.registerButton.click();
         ReusableMethods.waitFor(2);
@@ -134,3 +135,4 @@ public class TC08 {
 
     }
 }
+

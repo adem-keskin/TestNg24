@@ -4,8 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
-import techproed.pages.MyAccountPage;
 import techproed.pages.SignInPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -18,7 +18,7 @@ public class TC02 {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         SignInPage signInPage = new SignInPage();
-        MyAccountPage myAccountPage = new MyAccountPage();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
 
         //01- Vendor ana sayfaya gider
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
@@ -44,31 +44,31 @@ public class TC02 {
         ReusableMethods.waitFor(2);
 
         //08- Vendor My Account yazısını görür
-        Assert.assertTrue(myAccountPage.myAccountText2.isDisplayed());
+        Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
 
         //09- Vendor My Account yazısına tıklar
-        myAccountPage.myAccountText2.click();
+        allureAccountPage.myAccountText2.click();
 
         //10- Vendor Orders logosunu gördüğünü doğrular
         Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(myAccountPage.ordersLogo.isDisplayed());
+        Assert.assertTrue(allureAccountPage.ordersLogo.isDisplayed());
 
         //11- Vendor Downloads logosunu gördüğünü doğrular
-        Assert.assertTrue(myAccountPage.downloadsLogo.isDisplayed());
+        Assert.assertTrue(allureAccountPage.downloadsLogo.isDisplayed());
 
         //12- Vendors Addresses logosunu gördügünü dogrular
-        Assert.assertTrue(myAccountPage.addressesLogo.isDisplayed());
+        Assert.assertTrue(allureAccountPage.addressesLogo.isDisplayed());
 
         //13- Vendor Account details logosunu gördüğünü doğrular
-        Assert.assertTrue(myAccountPage.accountDetailsButton.isDisplayed());
+        Assert.assertTrue(allureAccountPage.accountDetailsButton.isDisplayed());
 
         //14- Vendor Wishlist logosunu gördüğünü doğrular
-        Assert.assertTrue(myAccountPage.wishlistLogo.isDisplayed());
+        Assert.assertTrue(allureAccountPage.wishlistLogo.isDisplayed());
 
         //15- Vendor Logout logosunu gördüğünü doğrular
-        Assert.assertTrue(myAccountPage.logoutLogo.isDisplayed());
+        Assert.assertTrue(allureAccountPage.logoutLogo.isDisplayed());
 
 
 

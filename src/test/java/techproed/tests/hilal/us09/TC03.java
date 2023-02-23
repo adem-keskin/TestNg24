@@ -64,6 +64,5 @@ public class TC03 {
         Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
 
 
-
     }
 }
