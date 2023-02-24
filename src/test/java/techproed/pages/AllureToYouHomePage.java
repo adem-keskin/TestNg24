@@ -25,7 +25,8 @@ public class AllureToYouHomePage {
     public WebElement signInButton;
 
 
-
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement singInTextButton;
 
 }
 

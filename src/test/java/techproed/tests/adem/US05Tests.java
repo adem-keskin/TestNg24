@@ -6,11 +6,10 @@ import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
-import techproed.utilities.ReusableMethods;
 
 public class US05Tests {
     @Test
-    public void US05_TC01(){
+    public void US05_TC01() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         AllureAccountPage allureAccountPage = new AllureAccountPage();
@@ -19,10 +18,22 @@ public class US05Tests {
 
         allureToYouHomePage.myAccountButton.click();
         Assert.assertTrue(allureAccountPage.myAccountText.isDisplayed());
+    }
 
+    @Test
+    public void US05_TC02() {
+
+        AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
+
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+
+        allureToYouHomePage.myAccountButton.click();
         allureAccountPage.usernameBox.sendKeys(ConfigReader.getProperty("email"));
 
         allureAccountPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+
+        allureAccountPage.displayNameBox.sendKeys(ConfigReader.getProperty("displayName"));
 
         allureAccountPage.rememberMeBox.click();
 
@@ -30,19 +41,26 @@ public class US05Tests {
 
         allureAccountPage.accountDetailsButton.click();
 
-        allureAccountPage.firstNameBox.clear();
-        allureAccountPage.firstNameBox.sendKeys(ConfigReader.getProperty("firstName"));
-        allureAccountPage.lastNameBox.clear();
-        allureAccountPage.lastNameBox.sendKeys(ConfigReader.getProperty("lastName"));
+        allureAccountPage.saveChangesButton.submit();
 
+    }
 
-        allureAccountPage.displayNameBox.clear();
+    @Test
+    public void US05_TC03() {
 
-        allureAccountPage.displayNameBox.sendKeys(ConfigReader.getProperty("displayName"));
+        AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
 
-        allureAccountPage.emailBox.clear();
-        allureAccountPage.emailBox.sendKeys(ConfigReader.getProperty("email"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
 
+        allureToYouHomePage.myAccountButton.click();
+        allureAccountPage.usernameBox.sendKeys(ConfigReader.getProperty("email"));
+
+        allureAccountPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+
+        allureAccountPage.singInButton.submit();
+
+        allureAccountPage.accountDetailsButton.click();
 
         Driver.getDriver().switchTo().frame(0);
         allureAccountPage.descriptionBox.clear();
@@ -50,13 +68,34 @@ public class US05Tests {
 
         Driver.getDriver().switchTo().defaultContent();
 
-        allureAccountPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("password"));
-        allureAccountPage.changePasswordButton.sendKeys(ConfigReader.getProperty("password2"));
-        allureAccountPage.confirmChangePasswordButton.sendKeys(ConfigReader.getProperty("password2"));
-
         allureAccountPage.saveChangesButton.submit();
-        Assert.assertEquals(allureAccountPage.alertBox.getText(), "Account details changed successfully.");
-        ReusableMethods.waitFor(3);
 
     }
+
+    @Test
+    public void US05_TC04(){
+
+        AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
+        AllureAccountPage allureAccountPage = new AllureAccountPage();
+
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+
+        allureToYouHomePage.myAccountButton.click();
+        allureAccountPage.usernameBox.sendKeys(ConfigReader.getProperty("email"));
+
+        allureAccountPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+
+        allureAccountPage.singInButton.submit();
+
+        allureAccountPage.accountDetailsButton.click();
+
+        allureAccountPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("password"));
+        allureAccountPage.changePasswordButton.sendKeys(ConfigReader.getProperty("passwordNew"));
+        allureAccountPage.confirmChangePasswordButton.sendKeys(ConfigReader.getProperty("passwordNew"));
+        // Burada Password degisecegi icin diger testcaselerde sonica etki edebilir!
+        allureAccountPage.saveChangesButton.submit();
+        Assert.assertEquals(allureAccountPage.alertBox.getText(), "Account details changed successfully.");
+
+    }
+
 }
