@@ -117,15 +117,13 @@ public class US17_TC01 {
     // 23. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(product2.addGalleryButton);
         ReusableMethods.waitFor(3);
-    // 24. Kullanici Price e deger girer.
-        product2.regularPriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
-        ReusableMethods.waitFor(3);
-    // 25. Kullanici Categori secer.
+
+    // 24. Kullanici Categori secer.
         ReusableMethods.clickByJS(product2.categorieBookMedien);
-    // 26. Kullanici Submit e tiklar.
+    // 25. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
         ReusableMethods.waitFor(3);
-    // 27. Kullanici ürün basariyla eklendi yazisini dogrular.
+    // 26. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
         ReusableMethods.waitFor(3);
 

@@ -85,5 +85,13 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "(//a[@href='https://allure2you.com/store-manager/products-manage/18609'])[1]")
     public WebElement pratikDusunme2ListImage;
 
+    // US18-EXTERNAL
+
+    @FindBy (xpath = "//input[@id='product_url']")
+    public WebElement urlTextBox;
+
+    @FindBy (xpath = "//input[@id='button_text']")
+    public WebElement buttonTextBox;
+
 
 }
