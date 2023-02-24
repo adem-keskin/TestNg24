@@ -323,6 +323,8 @@ public class ReusableMethods {
 
 
 
+
+
     public static void loginSingIn1(String email, String Password) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         HomePageUS12 homePage = new HomePageUS12();
