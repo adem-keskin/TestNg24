@@ -193,7 +193,7 @@ public class US17_TC01 {
     */
         ReusableMethods.medineStoreManager();
         ReusableMethods.waitFor(3);
-
+//Driver.getDriver().switchTo().alert().sendKeys("sari");
     /*
     15. Kullanici Product Listesinden bir ürün secer.
     16. Kullanici secilen ürünün göründügünü dogrular.
@@ -201,6 +201,7 @@ public class US17_TC01 {
     18. Kullanici Color butonununa tiklar.
     19. Kullanici ADD NEW butonununa tiklar.
     20. Kullanici acilan Allert kutucuguna yeni color u girer.
+
     21. Kullanici OK butonuna tiklar.
     22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
     23. Kullanici Size butonununa tiklar.

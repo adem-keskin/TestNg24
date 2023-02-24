@@ -53,7 +53,12 @@ public class US16_TC01 {
         productType.selectByValue("simple");
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.simple.isDisplayed());
-        Driver.closeDriver();
+
+        ReusableMethods.waitFor(2);
+        product.signOut.click();
+        ReusableMethods.waitFor(1);
+        product.logOut.click();
+     // Driver.getDriver().close();
 
     }
 
@@ -94,7 +99,7 @@ public class US16_TC01 {
         ReusableMethods.clickByJS(product2.downloadableCheckbox);
         ReusableMethods.waitFor(4);
         Assert.assertTrue(product2.downloadableCheckbox.isSelected());
-        Driver.closeDriver();
+     //   // Driver.closeDriver();
     }
 
     @Test
@@ -161,7 +166,7 @@ public class US16_TC01 {
         ReusableMethods.waitFor(1);
         product2.salePriceTextBox.clear();
 
-        Driver.closeDriver();
+        // Driver.closeDriver();
     }
 
     @Test
@@ -231,7 +236,7 @@ public class US16_TC01 {
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
         ReusableMethods.waitFor(3);
 
-        Driver.closeDriver();
+        // Driver.closeDriver();
     }
 
     @Test
@@ -264,6 +269,6 @@ public class US16_TC01 {
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(3);
 
-        Driver.closeDriver();
+        // Driver.closeDriver();
     }
 }
