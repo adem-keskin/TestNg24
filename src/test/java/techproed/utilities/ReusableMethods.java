@@ -4,14 +4,13 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
-<<<<<<< HEAD
+
 
 import techproed.pages.Erdem1415;
 
-=======
-<<<<<<< HEAD
+
 import techproed.pages.HomePageUS12;
->>>>>>> Kadir
+
 import techproed.pages.HomePageUS3;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
@@ -322,8 +321,8 @@ public class ReusableMethods {
         Assert.assertTrue(product2.addProductText.isDisplayed());
     }
 
-<<<<<<< HEAD
-=======
+
+
     public static void loginSingIn1(String email, String Password) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         HomePageUS12 homePage = new HomePageUS12();
@@ -335,8 +334,7 @@ public class ReusableMethods {
 
 
     }
-=======
->>>>>>> Kadir
+
     public static void uploadFilePath(String filePath){
         try{
             ReusableMethods.waitFor(3);
