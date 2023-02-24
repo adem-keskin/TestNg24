@@ -55,6 +55,35 @@ public class MedineStoreManagerPage01 {
     @FindBy(xpath = "//input[@id='sale_price']")
     public WebElement salePriceTextBox;
 
+    // ADD IMAGES - CATEGORIES - SUBMIT
+
+    @FindBy (xpath = "//li[@aria-label='Kitap']//div[@class='thumbnail']")
+    public WebElement pratikDusunmeImage;
+
+    @FindBy (xpath = "//li[@aria-label='stifte'][1]")
+    public WebElement kalemImage;
+
+    @FindBy (xpath = "(//li[@data-id='15287'])[2]")
+    public WebElement keysImage;
+
+    @FindBy (xpath = "//input[@value='232']")
+    public WebElement categorieBookMedien;
+
+    @FindBy (xpath = "//div[@class='wcfm_form_simple_submit_wrapper']")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
+    public WebElement addGalleryButton;
+
+    @FindBy (xpath = "//input[@name='submit-data']")
+    public WebElement submitButton;
+
+    // PRODUCT LISTELEME
+    @FindBy (xpath = "(//a[@class='wcfm_product_title'])[1]")
+    public WebElement pratikDusunme2ListName;
+
+    @FindBy (xpath = "(//a[@href='https://allure2you.com/store-manager/products-manage/18609'])[1]")
+    public WebElement pratikDusunme2ListImage;
 
 
 }
