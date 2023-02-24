@@ -10,7 +10,7 @@ import java.nio.file.WatchEvent;
 
 <<<<<<< HEAD:src/test/java/techproed/pages/MyAccountPage.java
 public class MyAccountPage {
-        public MyAccountPage() {
+        public MyAccountPage() {g
 =======
 
     public class AllureAccountPage {
