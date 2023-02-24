@@ -5,16 +5,21 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 <<<<<<< HEAD
+
+import techproed.pages.Erdem1415;
+
+=======
+<<<<<<< HEAD
 import techproed.pages.HomePageUS12;
+>>>>>>> Kadir
 import techproed.pages.HomePageUS3;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
 
-=======
+
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
->>>>>>> adem
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -26,6 +31,8 @@ import java.util.Random;
 import java.util.function.Function;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
+import static techproed.utilities.Driver.driver;
+
 public class ReusableMethods {
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
@@ -227,7 +234,6 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
-<<<<<<< HEAD
 
     public static void loginSingIn() {
     HomePageUS3 homePage3 = new HomePageUS3();
@@ -257,6 +263,11 @@ public class ReusableMethods {
         js.executeScript("arguments[0].click();",element);
     }
 
+    public static void typeWithJS(WebElement element, String text) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].setAttribute('value','" + text + "');", element);
+    }
+
     /*
     SIGN IN
     1. Kullanici Url'e gider.
@@ -274,12 +285,12 @@ public class ReusableMethods {
         Actions actions = new Actions(Driver.getDriver());
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
-        product.signInButton.click();
+        ReusableMethods.clickByJS(product.signInButton);
         Assert.assertTrue(product.signInPage.isDisplayed());
         product.signInUsername.sendKeys(ConfigReader.getProperty("vendorEmail"), Keys.TAB);
         product.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"), Keys.ENTER);
         ReusableMethods.waitFor(3);
-        product.myAccountButton.click();
+        ReusableMethods.clickByJS(product.myAccountButton);
         Assert.assertTrue(product.helloText.isDisplayed());
     }
 
@@ -293,9 +304,9 @@ public class ReusableMethods {
     public static void medineStoreManager() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
-        product2.storeManagerButton.click();
+        ReusableMethods.clickByJS(product2.storeManagerButton);
         Assert.assertTrue(product2.storeManagerText.isDisplayed());
-        product2.productsButton.click();
+        ReusableMethods.clickByJS(product2.productsButton);
         Assert.assertTrue(product2.productsText.isDisplayed());
     }
 
@@ -307,10 +318,12 @@ public class ReusableMethods {
     public static void medineAddNewProduct() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
-        product2.addNewProductDashboardButton.click();
+        ReusableMethods.clickByJS(product2.addNewProductDashboardButton);
         Assert.assertTrue(product2.addProductText.isDisplayed());
     }
 
+<<<<<<< HEAD
+=======
     public static void loginSingIn1(String email, String Password) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         HomePageUS12 homePage = new HomePageUS12();
@@ -323,6 +336,7 @@ public class ReusableMethods {
 
     }
 =======
+>>>>>>> Kadir
     public static void uploadFilePath(String filePath){
         try{
             ReusableMethods.waitFor(3);
@@ -351,5 +365,45 @@ public class ReusableMethods {
         }catch (Exception e){
         }
     }
+    public static void addNew() throws InterruptedException {
+
+
+
+        Erdem1415 erdem1415 = new Erdem1415();
+
+
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+        ReusableMethods.waitFor(2);
+        erdem1415.SignIn.click();
+        ReusableMethods.waitFor(2);
+        erdem1415.usernameBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        erdem1415.passwordBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        erdem1415.singInButton.submit();
+        ReusableMethods.waitFor(2);
+        erdem1415.myAcc.click();
+        ReusableMethods.waitFor(2);
+        erdem1415.storeManager.click();
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(1);
+        actions.moveToElement(erdem1415.products).perform();
+        erdem1415.addNewButton.click();
+
+
+    }
+    public static void selectFromDropdown(WebElement dropdown, String secenek){
+//        selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")), "2005"); -> year dan 2005
+//        selectFromDropdown(driver.findElement(By.xpath("//select[@id='month']")), "January"); -> month January
+//        selectFromDropdown(driver.findElement(By.id("day")), "12"); -> Day 12
+//        Gonderilen dropdown elemention tum optionslari alinir
+        List<WebElement> options = dropdown.findElements(By.tagName("option"));//Tum option tagli elementleri aliyorum
+        for (WebElement eachOption : options){
+            if (eachOption.getText().equals(secenek)){
+                eachOption.click();
+                break;
+            }
+        }
+    }
+
+
 }
->>>>>>> adem

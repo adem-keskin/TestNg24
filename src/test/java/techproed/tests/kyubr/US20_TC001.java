@@ -38,7 +38,7 @@ public class US20_TC001 {
     @Test
     public void US20Test1() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("allere2you_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         us06HomePage = new US06HomePage();
         us06HomePage.signInButton.click();
         us06HomePage.emailBox.sendKeys("testngteam24@yahoo.com", Keys.TAB);
