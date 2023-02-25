@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" preserve-order="true"
+          name="/Users/kubraarslan/IdeaProjects/TestNg24/src/test/java/techproed/tests/Serpil">
+        <classes>
+            <class name="techproed.tests.Serpil.Register_US01">
+                <methods>
+                    <include name="test_TC01"/>
+                    <include name="test_TC02"/>
+                    <include name="test_TC03"/>
+                    <include name="test_TC04"/>
+                    <include name="test_US05"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.Serpil.Register_US02">
+                <methods>
+                    <include name="test_TC01"/>
+                    <include name="test_TC02"/>
+                    <include name="test_TC03"/>
+                    <include name="test_TC04"/>
+                    <include name="test_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
