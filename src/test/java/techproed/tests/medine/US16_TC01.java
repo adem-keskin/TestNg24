@@ -145,7 +145,7 @@ public class US16_TC01 {
 
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
-        product2.regularPriceTextBox.clear();
+       // product2.regularPriceTextBox.clear();
 
         // 20. Kullanici Sale Price Kutucuguna invalid bir deger girer.
         product2.salePriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
@@ -159,7 +159,7 @@ public class US16_TC01 {
         ReusableMethods.waitFor(3);
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
-        product2.salePriceTextBox.clear();
+       // product2.salePriceTextBox.clear();
 
         Driver.closeDriver();
     }
