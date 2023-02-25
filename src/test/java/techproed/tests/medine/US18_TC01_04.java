@@ -1,5 +1,6 @@
 package techproed.tests.medine;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -11,7 +12,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class US18_TC01 {
+public class US18_TC01_04 {
 
     MedineProductsPage01 product = new MedineProductsPage01();
     MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
@@ -55,8 +56,14 @@ public class US18_TC01 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.external.isDisplayed());
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+
         Driver.closeDriver();
     }
+
     @Test
     public void test02() {
 
@@ -85,32 +92,32 @@ public class US18_TC01 {
         ReusableMethods.waitFor(3);
 
 
-    // 16. Kullanici External - Affiliate Product u seçer.
+        // 16. Kullanici External - Affiliate Product u seçer.
         Select productType = new Select(product2.productType);
         productType.selectByValue("external");
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.external.isDisplayed());
-    // 17. Kullanici ürünün Titel ini girer.
+        // 17. Kullanici ürünün Titel ini girer.
         erdem1415.proTitel.sendKeys(ConfigReader.getProperty("productTitle"));
         ReusableMethods.waitFor(2);
-    // 18. Kullanici URL Kutucugunun tiklanabilir oldugunu dogrular.
+        // 18. Kullanici URL Kutucugunun tiklanabilir oldugunu dogrular.
         ReusableMethods.clickByJS(product2.urlTextBox);
         ReusableMethods.waitFor(3);
         Assert.assertTrue(product2.urlTextBox.isDisplayed());
-    // 19. Kullanici URL Kutucuguna bir veri girer.
+        // 19. Kullanici URL Kutucuguna bir veri girer.
         product2.urlTextBox.sendKeys("Pratik Dusunme url ");
-    // 20. Kullanici Button Text Kutucugunun tiklanabilir oldugunu dogrular.
+        // 20. Kullanici Button Text Kutucugunun tiklanabilir oldugunu dogrular.
         ReusableMethods.clickByJS(product2.buttonTextBox);
         ReusableMethods.waitFor(3);
         Assert.assertTrue(product2.buttonTextBox.isDisplayed());
-    // 21. Kullanici Button Text Kutucuguna bir veri girer.
+        // 21. Kullanici Button Text Kutucuguna bir veri girer.
         product2.buttonTextBox.sendKeys("Pratik Dusunme 2 Button");
-    // 22. Kullanici Price Kutucugunun tiklanabilir oldugunu dogrular.
+        // 22. Kullanici Price Kutucugunun tiklanabilir oldugunu dogrular.
         ReusableMethods.clickByJS(product2.regularPriceTextBox);
         ReusableMethods.waitFor(3);
         Assert.assertTrue(product2.regularPriceTextBox.isDisplayed()); // ???? isEnabled()
 
-    // 24. Kullanici Price Kutucuguna invalid bir deger girer.
+        // 24. Kullanici Price Kutucuguna invalid bir deger girer.
         product2.regularPriceTextBox.sendKeys(ConfigReader.getProperty("invalidPrice"));//????
 
         ReusableMethods.waitFor(3);
@@ -118,31 +125,35 @@ public class US18_TC01 {
         ReusableMethods.waitFor(1);
         product2.regularPriceTextBox.clear();
 
-    // 23. Kullanici Price Kutucuguna gecerli bir deger girer.
+        // 23. Kullanici Price Kutucuguna gecerli bir deger girer.
         product2.regularPriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(3);
 
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
 
-    // 25. Kullanici Sale Price Kutucugunun tiklanabilir oldugunu dogrular.
+        // 25. Kullanici Sale Price Kutucugunun tiklanabilir oldugunu dogrular.
         ReusableMethods.clickByJS(product2.salePriceTextBox);
         ReusableMethods.waitFor(3);
         Assert.assertTrue(product2.salePriceTextBox.isDisplayed());
 
-    // 27. Kullanici Sale Price Kutucuguna invalid bir deger girer.
+        // 27. Kullanici Sale Price Kutucuguna invalid bir deger girer.
         product2.salePriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(3);
         Assert.assertEquals("", "");
         ReusableMethods.waitFor(1);
         product2.salePriceTextBox.clear();
 
-    // 26. Kullanici Sale Price Kutucuguna gecerli bir deger girer.
+        // 26. Kullanici Sale Price Kutucuguna gecerli bir deger girer.
         product2.salePriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(3);
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
 
         Driver.closeDriver();
     }
@@ -175,48 +186,52 @@ public class US18_TC01 {
         ReusableMethods.waitFor(3);
 
 
-    // 16. Kullanici urun cesitlerinin bulundugu dropdowndan External - Affiliate Product secenegini secer.
-            Select productType = new Select(product2.productType);
+        // 16. Kullanici urun cesitlerinin bulundugu dropdowndan External - Affiliate Product secenegini secer.
+        Select productType = new Select(product2.productType);
         productType.selectByValue("external");
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.external.isDisplayed());
-    // 17. Kullanici ürünün Titel ini girer.
+        // 17. Kullanici ürünün Titel ini girer.
         erdem1415.proTitel.sendKeys(ConfigReader.getProperty("productTitle"));
         ReusableMethods.waitFor(2);
-    // 18. Kullanici Resim1 e tiklar.
+        // 18. Kullanici Resim1 e tiklar.
         ReusableMethods.clickByJS(erdem1415.bykResim);
         ReusableMethods.waitFor(3);
-    // 19. Kullanici acilan sekmeden Product Resmini secer.
+        // 19. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
         ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.pratikDusunmeImage);
         ReusableMethods.waitFor(3);
-    // 20. Kullanici Select butonuna tiklar.
+        // 20. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(erdem1415.selectOk);
         ReusableMethods.waitFor(3);
-    // 21. Kullanici Resim2 e tiklar.
+        // 21. Kullanici Resim2 e tiklar.
         ReusableMethods.clickByJS(erdem1415.kckRes);
         ReusableMethods.waitFor(3);
-    // 22. Kullanici acilan sekmeden Product Resmini secer.
+        // 22. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
         ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.keysImage);
         ReusableMethods.waitFor(3);
-    // 23. Kullanici Select butonuna tiklar.
+        // 23. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(product2.addGalleryButton);
         ReusableMethods.waitFor(3);
-    // 24. Kullanici Price e deger girer.
+        // 24. Kullanici Price e deger girer.
         product2.regularPriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(3);
-    // 25. Kullanici Categori secer
+        // 25. Kullanici Categori secer
         ReusableMethods.clickByJS(product2.categorieBookMedien);
-    // 26. Kullanici Submit e tiklar.
+        // 26. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(3);
-    // 27. Kullanici ürün basariyla eklendi yazisinin görüldügünü dogrular.
+        ReusableMethods.waitFor(4);
+        // 27. Kullanici ürün basariyla eklendi yazisinin görüldügünü dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
 
         Driver.closeDriver();
     }
@@ -246,13 +261,18 @@ public class US18_TC01 {
         ReusableMethods.waitFor(3);
 
 
-    // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
+        // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
         ReusableMethods.waitFor(3);
-    // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
+        // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
 
         Driver.closeDriver();
     }

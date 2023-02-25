@@ -69,7 +69,7 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//input[@value='232']")
     public WebElement categorieBookMedien;
 
-    @FindBy (xpath = "//span[@class='wcicon-status-completed']" )  /* //div[@class='wcfm-message wcfm-success'] */
+    @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']" )  /*  //span[@class='wcicon-status-completed'] */
     public WebElement successMessage;
 
     @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
@@ -89,8 +89,8 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "(//a[@class='wcfm_product_title'])[1]")
     public WebElement pratikDusunme2ListName;
 
-    @FindBy (xpath = "(//a[@href='https://allure2you.com/store-manager/products-manage/18609'])[1]")
-    public WebElement pratikDusunme2ListImage;
+    @FindBy (xpath = "((//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]") //(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]
+    public WebElement pratikDusunme2ListImage; //(//img[@class='attachment-thumbnail size-thumbnail'])[1]
 
     // US18-EXTERNAL
 
@@ -112,8 +112,52 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//input[@id='attributes_is_active_1']")
     public WebElement colorTick;
 
-    @FindBy (xpath = "//button[@class='button wcfm_add_attribute_term wcfm_add_attributes_new_term']")
-    public WebElement addNewAttributeButton;
+     @FindBy (xpath = "(//span[@title='Toggle Block'])[2]")
+    public WebElement colorToggBlock;
+
+
+    @FindBy (xpath = "(//ul[@class='select2-selection__rendered'])[2]")
+    public WebElement colorTextBoxWrite;
+
+    @FindBy (xpath = "//input[@id='attributes_is_visible_1']")
+    public WebElement colorVisibleTick;
+
+    @FindBy (xpath = "(//button[@class='button wcfm_add_attribute_term wcfm_add_attributes_new_term'])[1]")
+    public WebElement addNewAttributeButtonColor;
+
+    @FindBy (xpath = "//input[@id='attributes_is_active_2']")
+    public WebElement sizeTick;
+
+    @FindBy (xpath = "(//span[@title='Toggle Block'])[3]")
+    public WebElement sizeToggBlock;
+
+    @FindBy (xpath = "(//ul[@class='select2-selection__rendered'])[3]")
+    public WebElement sizeTextBoxWrite;
+
+    @FindBy (xpath = "//input[@id='attributes_is_visible_2']")
+    public WebElement sizeVisibleTick;
+
+    @FindBy (xpath = "(//button[@class='button wcfm_add_attribute_term wcfm_add_attributes_new_term'])[2]")
+    public WebElement addNewAttributeButtonSize;
+
+    @FindBy (xpath = "//input[@value='View']")
+    public WebElement viewButton;
+
+    @FindBy (xpath = "(//div[@class='page_collapsible_content_holder'])[6]")
+    public WebElement variationsButton;
+
+    @FindBy (xpath = "//select[@name='default_attributes[attribute_pa_color]']")
+    public WebElement variationsColorDropDown;
+
+    @FindBy (xpath = "//select[@name='default_attributes[attribute_pa_size]']")
+    public WebElement variationsSizeDropDown;
+
+    @FindBy (xpath = "//a[@class='nav-link active']")
+    public WebElement specificationTab;
+
+
+
+
 
 
 

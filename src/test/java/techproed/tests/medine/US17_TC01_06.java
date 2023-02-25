@@ -1,6 +1,5 @@
 package techproed.tests.medine;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -13,7 +12,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class US17_TC01 {
+public class US17_TC01_06 {
 
     MedineProductsPage01 product = new MedineProductsPage01();
     MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
@@ -46,7 +45,6 @@ public class US17_TC01 {
         ReusableMethods.medineAddNewProduct();
         ReusableMethods.waitFor(3);
 
-
         /*
         16. Kullanici urun cesitlerinin buludugu dropdowndan Variable Product secenegini oldugunu dogrular.
         17. Kullanici Variable Product u seçer.
@@ -58,13 +56,16 @@ public class US17_TC01 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.variable.isDisplayed());
 
-        Driver.closeDriver();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+
+        //  Driver.closeDriver();
     }
 
     @Test
     public void test02() {
-
-
           /*
     1. Kullanici Url'e gider.
     2. Kullanici anasayfaya geldigini dogrular.
@@ -90,51 +91,53 @@ public class US17_TC01 {
         ReusableMethods.waitFor(3);
 
 
-    // 16. Kullanici Variable Product secenegini secer.
+        // 16. Kullanici Variable Product secenegini secer.
         Select productType = new Select(product2.productType);
         productType.selectByValue("variable");
-
-    // 17. Kullanici Product Title kismina veri girer.
+        // 17. Kullanici Product Title kismina veri girer.
         erdem1415.proTitel.sendKeys(ConfigReader.getProperty("productTitle"));
         ReusableMethods.waitFor(2);
-    // 18. Kullanici Resim1 e tiklar.
+        // 18. Kullanici Resim1 e tiklar.
         ReusableMethods.clickByJS(erdem1415.bykResim);
         ReusableMethods.waitFor(3);
-    // 19. Kullanici acilan sekmeden Product Resmini secer.
+        // 19. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
         ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.pratikDusunmeImage);
         ReusableMethods.waitFor(3);
-    // 20. Kullanici Select butonuna tiklar.
+        // 20. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(erdem1415.selectOk);
         ReusableMethods.waitFor(3);
-    // 21. Kullanici Resim2 e tiklar.
+        // 21. Kullanici Resim2 e tiklar.
         ReusableMethods.clickByJS(erdem1415.kckRes);
         ReusableMethods.waitFor(3);
-    // 22. Kullanici acilan sekmeden Product Resmini secer.
+        // 22. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
         ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.keysImage);
         ReusableMethods.waitFor(3);
-    // 23. Kullanici Select butonuna tiklar.
+        // 23. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(product2.addGalleryButton);
         ReusableMethods.waitFor(3);
-
-    // 24. Kullanici Categori secer.
+        // 24. Kullanici Categori secer.
         ReusableMethods.clickByJS(product2.categorieBookMedien);
-    // 25. Kullanici Submit e tiklar.
+        // 25. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
         ReusableMethods.waitFor(3);
-    // 26. Kullanici ürün basariyla eklendi yazisini dogrular.
+        // 26. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
         ReusableMethods.waitFor(3);
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+        //   Driver.closeDriver();
     }
+
     @Test
     public void test03() {
-
          /*
     1. Kullanici Url'e gider.
     2. Kullanici anasayfaya geldigini dogrular.
@@ -168,11 +171,11 @@ public class US17_TC01 {
      */
 
 
-        Driver.closeDriver();
+        //
     }
+
     @Test
     public void test04() {
-
          /*
     1. Kullanici Url'e gider.
     2. Kullanici anasayfaya geldigini dogrular.
@@ -194,35 +197,82 @@ public class US17_TC01 {
         ReusableMethods.medineStoreManager();
         ReusableMethods.waitFor(3);
 
+        //15. Kullanici Product Listesinden bir ürün secer.
+        ReusableMethods.clickByJS(product2.listeUrunResmi);
+        ReusableMethods.waitFor(3);
 
-    //15. Kullanici Product Listesinden bir ürün secer.
-     ReusableMethods.clickByJS(product2.listeUrunResmi);
-    // 16. Kullanici secilen ürünün göründügünü dogrular.
-     Assert.assertTrue(product2.listeUrunBuyukResmi.isDisplayed());
-    // 17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
+        //14. Kullanici urun cesitlerinin buludugu dropdowndan Variable Product secenegini secer.
+        Select productType = new Select(product2.productType);
+        productType.selectByValue("variable");
+        ReusableMethods.waitFor(2);
+
+
+        // 16. Kullanici secilen ürünün göründügünü dogrular.
+        Assert.assertTrue(product2.listeUrunBuyukResmi.isDisplayed());
+
+        // 17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.attributeButton);
-    // 18. Kullanici Color butonununa tiklar.
-        ReusableMethods.clickByJS(product2.colorTick);
-    // 19. Kullanici ADD NEW butonununa tiklar.
-        ReusableMethods.clickByJS(product2.addNewAttributeButton);
-    // 20. Kullanici acilan Allert kutucuguna yeni color u girer.
-        //Alert alert = driver.switchTo().alert();
-        //Driver.getDriver().switchTo().alert().sendKeys(ConfigReader.getProperty("color1")+Keys.ENTER);
-    // 21. Kullanici OK butonuna tiklar.
-        // actions.sendKeys(Keys.ENTER);
-    // 22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
-    // 23. Kullanici Size butonununa tiklar.
-    // 24. Kullanici ADD NEW butonununa tiklar.
-    // 25. Kullanici acilan Allert kutucuguna yeni size i girer.
-    // 26. Kullanici OK butonuna tiklar.
-    // 27. Kullanici Size alaninda girilen size in göründügünü dogrular.
-    // 28. Kullanici Submit e tiklar.
-    // 29. Kullanici Variations a tiklar.
-    // 30. Kullanici Color dropdownunda eklenen yeni color un gorundugunu dogrular.
-    // 31. Kullanici Size dropdownunda eklenen yeni color un gorundugunu dogrular.
+
+        // 18. Kullanici Color butonununa tiklar.
+        ReusableMethods.clickByJS(product2.colorToggBlock);
+        ReusableMethods.waitFor(3);
+        /*
+        if (product1.colorTick.isSelected()){
+            product1.colorToggBlock.click();
+            ReusableMethods.waitFor(3);
+        }else {
+            Driver2.clickByJS(product1.colorTick);
+            ReusableMethods.waitFor(3);
+        }
+         */
+
+        // 19. Kullanici ADD NEW butonununa tiklar.
+        ReusableMethods.clickByJS(product2.addNewAttributeButtonColor);
+        ReusableMethods.waitFor(5);
+
+        // 20. Kullanici acilan Allert kutucuguna yeni color u girer.
+        // 21. Kullanici OK butonuna tiklar.
+        Driver.getDriver().switchTo().alert().sendKeys("Kiiirmizii");
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().switchTo().alert().accept();
+        ReusableMethods.waitFor(3);
+
+        // 22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
+        // 23. Kullanici Size butonununa tiklar.
+        ReusableMethods.clickByJS(product2.sizeToggBlock);
+        ReusableMethods.waitFor(3);
+
+        // 24. Kullanici Size alaninda ADD NEW butonununa tiklar.
+        ReusableMethods.clickByJS(product2.addNewAttributeButtonSize);
+        ReusableMethods.waitFor(3);
+        // 25. Kullanici acilan Allert kutucuguna yeni size i girer.
+        // 26. Kullanici OK butonuna tiklar.
+        Driver.getDriver().switchTo().alert().sendKeys("MMMSSS");
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().switchTo().alert().accept();
+        ReusableMethods.waitFor(3);
+
+        // 27. Kullanici Size alaninda girilen size in göründügünü dogrular.
+        // 28. Kullanici Submit e tiklar.
+        ReusableMethods.clickByJS(product2.submitButton);
+        ReusableMethods.waitFor(3);
+
+        // 29. Kullanici Variations a tiklar.
+        ReusableMethods.clickByJS(product2.variationsButton);
+        ReusableMethods.waitFor(3);
+
+        // 30. Kullanici Color dropdownunda eklenen yeni color un gorundugunu dogrular.
+        ReusableMethods.clickByJS(product2.variationsColorDropDown);
+        ReusableMethods.waitFor(3);
+
+        // 31. Kullanici Size dropdownunda eklenen yeni color un gorundugunu dogrular.
+        ReusableMethods.clickByJS(product2.variationsSizeDropDown);
+        ReusableMethods.waitFor(3);
 
 
-        Driver.closeDriver();
+        // Driver.closeDriver();
 
     }
 
@@ -300,15 +350,19 @@ public class US17_TC01 {
         ReusableMethods.waitFor(3);
 
 
-    // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
+        // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
         ReusableMethods.waitFor(3);
-    // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
+        // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(3);
 
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+        //   Driver.closeDriver();
 
     }
 
