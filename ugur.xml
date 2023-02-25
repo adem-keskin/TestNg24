@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" preserve-order="true"
+          name="C:/Users/tasta/IdeaProjects/TestNg24/src/test/java/techproed/tests/ugur">
+        <classes>
+            <class name="techproed.tests.ugur.US08_WishlistTest">
+                <methods>
+                    <include name="US08_Test"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.ugur.US_07CompareTest">
+                <methods>
+                    <include name="compareTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

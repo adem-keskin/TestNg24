@@ -1,6 +1,7 @@
 package techproed.tests.ugur;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.US_07Compare;
@@ -48,6 +49,12 @@ public class US_07CompareTest {
 
         Assert.assertTrue(us07Compare.comparePage.isDisplayed());
 
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(5000);
+
+        actions.sendKeys(Keys.PAGE_UP).perform();
+        Thread.sleep(5000);
 
         us07Compare.firstDelete.click();
         Thread.sleep(3000);
@@ -82,12 +89,12 @@ public class US_07CompareTest {
         Thread.sleep(2000);
 
         Assert.assertTrue(us07Compare.comparePage.isDisplayed());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
+        Thread.sleep(3000);
+        actions.sendKeys(Keys.PAGE_UP).perform();
+        Thread.sleep(3000);
         Driver.closeDriver();
-
-
-
-
 
     }
 }
