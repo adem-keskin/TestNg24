@@ -69,7 +69,7 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//input[@value='232']")
     public WebElement categorieBookMedien;
 
-    @FindBy (xpath = "//div[@class='wcfm_form_simple_submit_wrapper']")
+    @FindBy (xpath = "//span[@class='wcicon-status-completed']" )  /* //div[@class='wcfm-message wcfm-success'] */
     public WebElement successMessage;
 
     @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
@@ -77,6 +77,13 @@ public class MedineStoreManagerPage01 {
 
     @FindBy (xpath = "//input[@name='submit-data']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "//*[@class='login logout inline-type']")
+    public WebElement signOut;
+
+    @FindBy(linkText = "Log out")
+    public WebElement logOut;
+
 
     // PRODUCT LISTELEME
     @FindBy (xpath = "(//a[@class='wcfm_product_title'])[1]")
@@ -92,6 +99,22 @@ public class MedineStoreManagerPage01 {
 
     @FindBy (xpath = "//input[@id='button_text']")
     public WebElement buttonTextBox;
+
+    @FindBy (xpath = "//div[@id='wcfm_products_manage_form_attribute_head']")
+    public WebElement attributeButton;
+
+    @FindBy (xpath = "(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/okul-esyalari-150x150.jpg'])[1]")
+    public WebElement listeUrunResmi;
+
+    @FindBy (xpath = "//img[@id='featured_img_display']")
+    public WebElement listeUrunBuyukResmi;
+
+    @FindBy (xpath = "//input[@id='attributes_is_active_1']")
+    public WebElement colorTick;
+
+    @FindBy (xpath = "//button[@class='button wcfm_add_attribute_term wcfm_add_attributes_new_term']")
+    public WebElement addNewAttributeButton;
+
 
 
 }

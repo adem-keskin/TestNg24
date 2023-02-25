@@ -53,7 +53,12 @@ public class US16_TC01 {
         productType.selectByValue("simple");
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.simple.isDisplayed());
-        Driver.closeDriver();
+
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+     // Driver.getDriver().close();
 
     }
 
@@ -94,7 +99,12 @@ public class US16_TC01 {
         ReusableMethods.clickByJS(product2.downloadableCheckbox);
         ReusableMethods.waitFor(4);
         Assert.assertTrue(product2.downloadableCheckbox.isSelected());
-        Driver.closeDriver();
+
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+       // Driver.closeDriver();
     }
 
     @Test
@@ -161,7 +171,12 @@ public class US16_TC01 {
         ReusableMethods.waitFor(1);
        // product2.salePriceTextBox.clear();
 
-        Driver.closeDriver();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+
+        // Driver.closeDriver();
     }
 
     @Test
@@ -198,40 +213,45 @@ public class US16_TC01 {
         ReusableMethods.waitFor(2);
         //19. Kullanici Resim1 e tiklar.
         ReusableMethods.clickByJS(erdem1415.bykResim);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //20. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(product2.pratikDusunmeImage);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //21. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(erdem1415.selectOk);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 
         //22. Kullanici Resim2 e tiklar.
         ReusableMethods.clickByJS(erdem1415.kckRes);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //23. Kullanici acilan sekmeden Product Resmini secer.
         ReusableMethods.clickByJS(erdem1415.mediaLib);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(product2.keysImage);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //24. Kullanici Select butonuna tiklar.
         ReusableMethods.clickByJS(product2.addGalleryButton);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //25. Kullanici Price e deger girer.
         product2.regularPriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //26. Kullanici Categori secer
         ReusableMethods.clickByJS(product2.categorieBookMedien);
         //27. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         //28. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 
-        Driver.closeDriver();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+
+        // Driver.closeDriver();
     }
 
     @Test
@@ -264,6 +284,11 @@ public class US16_TC01 {
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(3);
 
-        Driver.closeDriver();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(product2.logOut);
+
+        // Driver.closeDriver();
     }
 }
