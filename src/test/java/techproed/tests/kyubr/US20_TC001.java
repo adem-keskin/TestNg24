@@ -57,7 +57,8 @@ public class US20_TC001 {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(5);
-        us06HomePage.couponsButton.click();
+//        us06HomePage.couponsButton.click();
+        ReusableMethods.clickByJS(us06HomePage.couponsButton);
 
         ReusableMethods.waitFor(7);
         //Driver.getDriver().manage().window().fullscreen();

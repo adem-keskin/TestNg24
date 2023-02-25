@@ -40,7 +40,8 @@ public class US20_TC002 {
         us06HomePage.passwordBox.sendKeys("qateam2424",Keys.TAB);
         us06HomePage.girisBolumundekSignInButton.click();
         ReusableMethods.waitFor(5);
-        us06HomePage.myAccountButton.click();
+        //us06HomePage.myAccountButton.click();
+        ReusableMethods.clickByJS(us06HomePage.myAccountButton);
         ReusableMethods.waitFor(5);
 
         assert us06HomePage.myAccountBasligi.isDisplayed();//fazladan oldu
