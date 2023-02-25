@@ -4,7 +4,6 @@ package techproed.tests.medine;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.impl.HdrDocumentImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.Erdem1415;
@@ -14,7 +13,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class US16_TC01 {
+public class US16_TC01_05 {
     MedineProductsPage01 product = new MedineProductsPage01();
     MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
     Erdem1415 erdem1415 = new Erdem1415();
@@ -58,7 +57,7 @@ public class US16_TC01 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-     // Driver.getDriver().close();
+        Driver.getDriver().close();
 
     }
 
@@ -104,7 +103,7 @@ public class US16_TC01 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-       // Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @Test
@@ -155,7 +154,7 @@ public class US16_TC01 {
 
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
-       // product2.regularPriceTextBox.clear();
+        // product2.regularPriceTextBox.clear();
 
         // 20. Kullanici Sale Price Kutucuguna invalid bir deger girer.
         product2.salePriceTextBox.sendKeys(ConfigReader.getProperty("validPrice"));
@@ -169,14 +168,14 @@ public class US16_TC01 {
         ReusableMethods.waitFor(3);
         Assert.assertEquals(ConfigReader.getProperty("validPrice"), ConfigReader.getProperty("validPrice"));
         ReusableMethods.waitFor(1);
-       // product2.salePriceTextBox.clear();
+        // product2.salePriceTextBox.clear();
 
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        // Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @Test
@@ -241,17 +240,17 @@ public class US16_TC01 {
         ReusableMethods.clickByJS(product2.categorieBookMedien);
         //27. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         //28. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
 
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        // Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @Test
@@ -275,20 +274,21 @@ public class US16_TC01 {
     13. Kullanici Product sayfasinda oldugunu dogrular.
     */
         ReusableMethods.medineStoreManager();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
         //14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
         //15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        // Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
