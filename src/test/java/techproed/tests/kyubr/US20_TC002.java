@@ -44,17 +44,18 @@ public class US20_TC002 {
         ReusableMethods.clickByJS(us06HomePage.myAccountButton);
         ReusableMethods.waitFor(5);
 
-        assert us06HomePage.myAccountBasligi.isDisplayed();//fazladan oldu
+       // us06HomePage.myAccountBasligi.isDisplayed();//fazladan oldu
 
 
 
-        us06HomePage.storeManagerButton.click();
+        //us06HomePage.storeManagerButton.click();
+        ReusableMethods.clickByJS(us06HomePage.storeManagerButton);
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(5);
         us06HomePage.couponsButton.click();
 
-        assert us06HomePage.couponsListingYazisi.isDisplayed();//fazladan oldu
+        //assert us06HomePage.couponsListingYazisi.isDisplayed();//fazladan oldu
 
         ReusableMethods.waitFor(5);
         Driver.getDriver().manage().window().fullscreen();

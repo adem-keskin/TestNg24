@@ -38,7 +38,7 @@ public class US06HomePage {
         @FindBy(xpath = "//*[text()='Update cart']")
         public WebElement updateCartButton;
 
-        @FindBy (xpath = "//*[@class='checkout-button button alt wc-forward']")
+        @FindBy (xpath = "//a[@class='checkout-button button alt wc-forward']")
         public WebElement proceedToCheckoutButton;
 
         @FindBy(xpath = "//*[@id='billing_first_name']" )
