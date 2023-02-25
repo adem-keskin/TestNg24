@@ -219,7 +219,7 @@ public class Erdem1415 {
 
     @FindBy(xpath = "(//button[@class='button wcfm_add_attribute_term wcfm_select_all_attributes'])[1]")
     public WebElement colorSelectAll;
-    @FindBy(xpath = "(//button[@class='button wcfm_add_attribute_term wcfm_select_no_attributes']")
+    @FindBy(xpath = "//button[@class='button wcfm_add_attribute_term wcfm_select_no_attributes']")
     public WebElement colorSelectNone;
 
 
@@ -235,6 +235,12 @@ public class Erdem1415 {
 
     @FindBy(xpath = "//select[@id='attributes_value_2']")
     public WebElement sizeDD;
+
+    @FindBy(xpath = "(//*[text()='Select all'])[2]")
+    public WebElement sizeSelectAll;
+
+    @FindBy(xpath = "(//*[text()='Select none'])[2]")
+    public WebElement sizeSelectNone;
 
     //TC05-01
     @FindBy(xpath = "(//input[@class='select2-search__field'])[4]")
@@ -320,6 +326,7 @@ public class Erdem1415 {
     public WebElement ünitsperDog;
     @FindBy(xpath = "(//input[@value='2'])[1]")
     public WebElement minOrdDog;
+
 
 }
 

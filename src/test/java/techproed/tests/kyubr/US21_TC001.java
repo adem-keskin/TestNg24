@@ -35,7 +35,7 @@ public class US21_TC001 {
     @Test
     public void US21Test1() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("allere2you_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         us06HomePage= new US06HomePage();
         assert us06HomePage.spendingGoodYazisi.isDisplayed();//ilk sayfada oldugumuzu gostersin diye yazdim.
         us06HomePage.searchbox.click();
@@ -65,15 +65,17 @@ public class US21_TC001 {
         ReusableMethods.waitFor(5);
         us06HomePage.applyCouponButton.click();
 
-        us06HomePage.proceedToCheckoutButton.click();
+        //us06HomePage.proceedToCheckoutButton.click();
+        ReusableMethods.clickByJS(us06HomePage.proceedToCheckoutButton);
 
         assert us06HomePage.billingDetailsYazisi.isDisplayed();//yeni bir ayfaya gectigimizi gostermek icin yazildi.
 
-        //us06HomePage.firstNameBox.sendKeys("Mia",Keys.TAB,"daphne",Keys.TAB,Keys.TAB,Keys.TAB,"12",
-        //Keys.TAB,Keys.TAB,"miami",Keys.TAB,Keys.TAB,"32256",Keys.TAB,"5555-555-555",Keys.TAB,"bhugii@gmail.com");
+        us06HomePage.firstNameBox.sendKeys("Mia",Keys.TAB,"daphne",Keys.TAB,Keys.TAB,Keys.TAB,"12",
+        Keys.TAB,Keys.TAB,"miami",Keys.TAB,Keys.TAB,"32256",Keys.TAB,"5555-555-555",Keys.TAB,"bhugii@gmail.com");
 
-        Select select = new Select(us06HomePage.ulkeDegistirme);
-        select.selectByIndex(1);
+        assert us06HomePage.paymentMethodtext.isDisplayed();
+
+
 
         ReusableMethods.waitFor(5);
 //        Actions actions2 = new Actions(Driver.getDriver());
@@ -86,6 +88,8 @@ public class US21_TC001 {
         us06HomePage.placeOrderButton.click();
 
         assert us06HomePage.thankYouText.isDisplayed();
+
+        Driver.closeDriver();
 
     }
 }
