@@ -1,9 +1,6 @@
 package techproed.tests.hilal.us09;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -60,7 +57,7 @@ public class TC03 {
         vendorRegisterPage.reSendCode.click();
 
         //11- Admin "Verification code sent to your email:" uyarı mesajını alır
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
 
 
