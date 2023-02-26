@@ -46,6 +46,7 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -57,11 +58,13 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -72,6 +75,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -83,6 +87,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
     public static void waitFor(int sec) {
@@ -92,23 +97,28 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -119,6 +129,7 @@ public class ReusableMethods {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -134,6 +145,7 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
+
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
@@ -148,13 +160,16 @@ public class ReusableMethods {
         });
         return element;
     }
+
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
+
     /**
      * @param element
      * @param check
@@ -170,8 +185,10 @@ public class ReusableMethods {
             }
         }
     }
+
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
@@ -182,6 +199,7 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+
     /**
      * Verifies whether the element matching the provided locator is displayed on page
      * fails if the element matching the provided locator is not found or not displayed
@@ -195,6 +213,7 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + by);
         }
     }
+
     /**
      * Verifies whether the element matching the provided locator is NOT displayed on page
      * fails if the element matching the provided locator is not found or not displayed
@@ -208,9 +227,11 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
     /**
      * Verifies whether the element matching the provided WebElement is NOT displayed on page
      * fails if the element matching the WebElement is not found or not displayed
+     *
      * @paramWebElement
      */
     public static void verifyElementNotDisplayed(WebElement element) {
@@ -220,6 +241,7 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
     /**
      * Verifies whether the element is displayed on page
      * fails if the element is not found or not displayed
@@ -235,18 +257,18 @@ public class ReusableMethods {
     }
 
     public static void loginSingIn() {
-    HomePageUS3 homePage3 = new HomePageUS3();
-    // try {
-            Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
-           homePage3 .signIn.click();
-            ReusableMethods.waitFor(2);
-           homePage3.email.sendKeys(ConfigReader.getProperty("email"));
-            ReusableMethods.waitFor(2);
-            homePage3.password.sendKeys(ConfigReader.getProperty("password"));
-            ReusableMethods.waitFor(2);
-            homePage3.signInButonu.click();
-            ReusableMethods.waitFor(2);
-    //   } catch (Exception e) {
+        HomePageUS3 homePage3 = new HomePageUS3();
+        // try {
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+        homePage3.signIn.click();
+        ReusableMethods.waitFor(2);
+        homePage3.email.sendKeys(ConfigReader.getProperty("email"));
+        ReusableMethods.waitFor(2);
+        homePage3.password.sendKeys(ConfigReader.getProperty("password"));
+        ReusableMethods.waitFor(2);
+        homePage3.signInButonu.click();
+        ReusableMethods.waitFor(2);
+        //   } catch (Exception e) {
 
 //        }
 //        try {
@@ -257,9 +279,9 @@ public class ReusableMethods {
     }
 
 
-    public static void clickByJS(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
-        js.executeScript("arguments[0].click();",element);
+    public static void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
     }
 
     public static void typeWithJS(WebElement element, String text) {
@@ -322,9 +344,6 @@ public class ReusableMethods {
     }
 
 
-
-
-
     public static void loginSingIn1(String email, String Password) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         HomePageUS12 homePage = new HomePageUS12();
@@ -337,11 +356,11 @@ public class ReusableMethods {
 
     }
 
-    public static void uploadFilePath(String filePath){
-        try{
+    public static void uploadFilePath(String filePath) {
+        try {
             ReusableMethods.waitFor(3);
             StringSelection stringSelection = new StringSelection(filePath);
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
             Robot robot = new Robot();
             //pressing ctrl+v
             robot.keyPress(KeyEvent.VK_CONTROL);
@@ -362,11 +381,10 @@ public class ReusableMethods {
             robot.keyRelease(KeyEvent.VK_ENTER);
             ReusableMethods.waitFor(3);
             System.out.println("ENTER");
-        }catch (Exception e){
+        } catch (Exception e) {
         }
     }
     public static void addNew() throws InterruptedException {
-
 
 
         Erdem1415 erdem1415 = new Erdem1415();
@@ -391,19 +409,17 @@ public class ReusableMethods {
 
 
     }
-    public static void selectFromDropdown(WebElement dropdown, String secenek){
+    public static void selectFromDropdown(WebElement dropdown, String secenek) {
 //        selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")), "2005"); -> year dan 2005
 //        selectFromDropdown(driver.findElement(By.xpath("//select[@id='month']")), "January"); -> month January
 //        selectFromDropdown(driver.findElement(By.id("day")), "12"); -> Day 12
 //        Gonderilen dropdown elemention tum optionslari alinir
         List<WebElement> options = dropdown.findElements(By.tagName("option"));//Tum option tagli elementleri aliyorum
-        for (WebElement eachOption : options){
-            if (eachOption.getText().equals(secenek)){
+        for (WebElement eachOption : options) {
+            if (eachOption.getText().equals(secenek)) {
                 eachOption.click();
                 break;
             }
         }
     }
-
-
 }

@@ -61,7 +61,7 @@ public class US18_TC01_04 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @Test
@@ -155,7 +155,7 @@ public class US18_TC01_04 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @Test
@@ -233,7 +233,7 @@ public class US18_TC01_04 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @Test

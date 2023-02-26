@@ -235,12 +235,13 @@ public class US17_TC01_06 {
         // 20. Kullanici acilan Allert kutucuguna yeni color u girer.
         // 21. Kullanici OK butonuna tiklar.
         Driver.getDriver().switchTo().alert().sendKeys("Kiiirmizii");
-        ReusableMethods.waitFor(3);
-        Driver.getDriver().switchTo().alert().accept();
-        ReusableMethods.waitFor(3);
+       // ReusableMethods.waitFor(3);
+       // Driver.getDriver().switchTo().alert().accept();
+        ReusableMethods.waitFor(5);
 
         // 22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
         // 23. Kullanici Size butonununa tiklar.
+        System.out.println("-------------------------------");
         ReusableMethods.clickByJS(product2.sizeToggBlock);
         ReusableMethods.waitFor(3);
 
@@ -250,9 +251,9 @@ public class US17_TC01_06 {
         // 25. Kullanici acilan Allert kutucuguna yeni size i girer.
         // 26. Kullanici OK butonuna tiklar.
         Driver.getDriver().switchTo().alert().sendKeys("MMMSSS");
-        ReusableMethods.waitFor(3);
-        Driver.getDriver().switchTo().alert().accept();
-        ReusableMethods.waitFor(3);
+      //  ReusableMethods.waitFor(3);
+       // Driver.getDriver().switchTo().alert().accept();
+        ReusableMethods.waitFor(5);
 
         // 27. Kullanici Size alaninda girilen size in göründügünü dogrular.
         // 28. Kullanici Submit e tiklar.
@@ -320,7 +321,7 @@ public class US17_TC01_06 {
      */
 
 
-        Driver.closeDriver();
+     //   Driver.closeDriver();
     }
 
 
@@ -352,10 +353,11 @@ public class US17_TC01_06 {
 
         // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
         // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
+        actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
