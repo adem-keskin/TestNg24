@@ -52,7 +52,6 @@ public class Hatice_US03 {
         Assert.assertEquals(homePage3.accountChangeMessage.getText(),"Address changed successfully.");
         ReusableMethods.getScreenshot("Pozitif");
         ReusableMethods.waitFor(3);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
@@ -88,7 +87,6 @@ public class Hatice_US03 {
         Assert.assertTrue(homePage3.firstNameMessage.getText().contains("First name is a required field."));
         ReusableMethods.getScreenshot("NegativeFirstname");
         ReusableMethods.waitFor(3);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
 
     }
@@ -123,7 +121,6 @@ public class Hatice_US03 {
         ReusableMethods.getScreenshot("Negative Lastname");
         Assert.assertTrue(homePage3.lastNameMessage.getText().contains("Last name is a required field."));
         ReusableMethods.waitFor(3);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
@@ -157,7 +154,6 @@ public class Hatice_US03 {
         ReusableMethods.getScreenshot("Negative StreetAddress");
         Assert.assertTrue(homePage3.streetAddressMessage.getText().contains("Street address is a required field."));
         ReusableMethods.waitFor(3);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
@@ -191,7 +187,6 @@ public class Hatice_US03 {
         Assert.assertTrue(homePage3.postCodeMessage.getText().contains("Postcode / ZIP is a required field."));
         ReusableMethods.getScreenshot("Negative PostCode");
         ReusableMethods.waitFor(2);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
@@ -225,7 +220,6 @@ public class Hatice_US03 {
         Assert.assertTrue(homePage3.townCityMessage.getText().contains("Town / City is a required field."));
         ReusableMethods.getScreenshot("Negative TownCity");
         ReusableMethods.waitFor(2);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
@@ -261,7 +255,6 @@ public class Hatice_US03 {
         Assert.assertTrue(homePage3.phoneMessage.getText().contains("Phone is a required field."));
         ReusableMethods.getScreenshot("Negative Phone");
         ReusableMethods.waitFor(2);
-        ReusableMethods.clickByJS(homePage3.logOut);
         Driver.closeDriver();
     }
 
