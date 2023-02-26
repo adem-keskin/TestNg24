@@ -263,9 +263,9 @@ public class ReusableMethods {
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         homePage3.signIn.click();
         ReusableMethods.waitFor(2);
-        homePage3.email.sendKeys(ConfigReader.getProperty("email"));
+        homePage3.email.sendKeys(ConfigReader.getProperty("positive_email"));
         ReusableMethods.waitFor(2);
-        homePage3.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage3.password.sendKeys(ConfigReader.getProperty("positive_password"));
         ReusableMethods.waitFor(2);
         homePage3.signInButonu.click();
         ReusableMethods.waitFor(2);
