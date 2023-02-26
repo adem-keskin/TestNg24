@@ -1,9 +1,9 @@
 package techproed.tests.ugur;
 
 
-
 import org.openqa.selenium.Keys;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.US08_Wishlist;
@@ -66,7 +66,7 @@ public class US08_WishlistTest {
         Assert.assertEquals(us08Whishlist.alertBoxMessage.getText(), "VIEW CART “Sweatshirt Rose” has been added to your cart.");
 
         us08Whishlist.quickView.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         us08Whishlist.xButton.click();
         Thread.sleep(3000);
         us08Whishlist.addToCart.click();
@@ -87,10 +87,14 @@ public class US08_WishlistTest {
         us08Whishlist.proceedToCheckout.sendKeys(Keys.ENTER);
 
         assert us08Whishlist.checkoutPage.isDisplayed();
+        Thread.sleep(5000);
 
 
         us08Whishlist.billingFirstName.sendKeys("Ugur",Keys.TAB,"Tastan",Keys.TAB,Keys.TAB,"United Kingdom",Keys.TAB);
-        us08Whishlist.streetAddress.sendKeys("Street 1",Keys.TAB,Keys.TAB,"London",Keys.TAB,Keys.TAB,"W1A 1AA",Keys.TAB,"+123333422", Keys.TAB,"abc@gmail.com",Keys.ENTER);
+        Thread.sleep(3000);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        us08Whishlist.streetAddress.sendKeys("Croydon",Keys.TAB,Keys.TAB,"London",Keys.TAB,Keys.TAB,"CR06UN",Keys.TAB,"+123333422", Keys.TAB,"abc@gmail.com",Keys.ENTER);
 
 
         assert us08Whishlist.paymentMethods.isDisplayed();
@@ -99,7 +103,7 @@ public class US08_WishlistTest {
         us08Whishlist.placeOrder.submit();
 
         assert us08Whishlist.orderMessage.isDisplayed();
-
+        Thread.sleep(3000);
         Driver.closeDriver();
 
 

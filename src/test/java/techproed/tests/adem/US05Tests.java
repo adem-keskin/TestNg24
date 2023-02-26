@@ -6,7 +6,6 @@ import techproed.pages.AllureAccountPage;
 import techproed.pages.AllureToYouHomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
-import techproed.utilities.ReusableMethods;
 
 public class US05Tests {
     @Test

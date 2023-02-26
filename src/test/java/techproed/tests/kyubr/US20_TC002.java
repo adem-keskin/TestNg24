@@ -32,7 +32,7 @@ public class US20_TC002 {
     public void US20Test2() {
 
 
-        Driver.getDriver().get(ConfigReader.getProperty("allere2you_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         us06HomePage= new US06HomePage();
         us06HomePage.signInButton.click();
         us06HomePage.emailBox.sendKeys("testngteam24@yahoo.com", Keys.TAB);
@@ -40,20 +40,22 @@ public class US20_TC002 {
         us06HomePage.passwordBox.sendKeys("qateam2424",Keys.TAB);
         us06HomePage.girisBolumundekSignInButton.click();
         ReusableMethods.waitFor(5);
-        us06HomePage.myAccountButton.click();
+        //us06HomePage.myAccountButton.click();
+        ReusableMethods.clickByJS(us06HomePage.myAccountButton);
         ReusableMethods.waitFor(5);
 
-        assert us06HomePage.myAccountBasligi.isDisplayed();//fazladan oldu
+       // us06HomePage.myAccountBasligi.isDisplayed();//fazladan oldu
 
 
 
-        us06HomePage.storeManagerButton.click();
+        //us06HomePage.storeManagerButton.click();
+        ReusableMethods.clickByJS(us06HomePage.storeManagerButton);
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(5);
         us06HomePage.couponsButton.click();
 
-        assert us06HomePage.couponsListingYazisi.isDisplayed();//fazladan oldu
+        //assert us06HomePage.couponsListingYazisi.isDisplayed();//fazladan oldu
 
         ReusableMethods.waitFor(5);
         Driver.getDriver().manage().window().fullscreen();

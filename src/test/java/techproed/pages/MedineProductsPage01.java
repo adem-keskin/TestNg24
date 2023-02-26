@@ -35,6 +35,12 @@ public class MedineProductsPage01 {
     @FindBy(xpath = "//p[@class='greeting mb-0']")
     public WebElement helloText;
 
+    @FindBy(xpath = "//*[@class='login logout inline-type']")
+    public WebElement signOut;
+
+    @FindBy(linkText = "Log out")
+    public WebElement logOut;
+
 
 }
 

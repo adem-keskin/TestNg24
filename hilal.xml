@@ -1,2 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/macmac/IdeaProjects/TestNg24/src/test/java/techproed/tests/hilal"><classes><class name="techproed.tests.hilal.us09.TC01"><methods><include name="becomeAVendorLoginTest"/></methods></class><class name="techproed.tests.hilal.us09.TC02"><methods><include name="getFakeEmailTest"/></methods></class><class name="techproed.tests.hilal.us09.TC03"><methods><include name="verificationCodeSentTest"/></methods></class><class name="techproed.tests.hilal.us09.TC04"><methods><include name="verificationCodeTest"/></methods></class><class name="techproed.tests.hilal.us09.TC05"><methods><include name="passwordTest"/></methods></class><class name="techproed.tests.hilal.us09.TC06"><methods><include name="passwordConfirmTest"/></methods></class><class name="techproed.tests.hilal.us09.TC07"><methods><include name="registerCompletedTest"/></methods></class><class name="techproed.tests.hilal.us09.TC08"><methods><include name="alreadyExistsTest"/></methods></class><class name="techproed.tests.hilal.us10.TC01"><methods><include name="tooShortMessageTest"/></methods></class><class name="techproed.tests.hilal.us10.TC02"><methods><include name="weekMessageTest"/></methods></class><class name="techproed.tests.hilal.us10.TC03"><methods><include name="goodMessageTest"/></methods></class><class name="techproed.tests.hilal.us10.TC04"><methods><include name="strongMessageTest"/></methods></class><class name="techproed.tests.hilal.us11.TC01"><methods><include name="myAccountVisibility"/></methods></class><class name="techproed.tests.hilal.us11.TC02"><methods><include name="dataVisibilityTest"/></methods></class><class name="techproed.tests.hilal.us11.TC03"><methods><include name="dataVisibilityTest2"/></methods></class></classes></test></suite>
+=======
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" preserve-order="true"
+          name="/Users/kubraarslan/IdeaProjects/TestNg24/src/test/java/techproed/tests/hilal">
+        <classes>
+            <class name="techproed.tests.hilal.us09.TC01">
+                <methods>
+                    <include name="becomeAVendorLoginTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC02">
+                <methods>
+                    <include name="getFakeEmailTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC03">
+                <methods>
+                    <include name="verificationCodeSentTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC04">
+                <methods>
+                    <include name="verificationCodeTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC05">
+                <methods>
+                    <include name="passwordTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC06">
+                <methods>
+                    <include name="passwordConfirmTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC07">
+                <methods>
+                    <include name="registerCompletedTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us09.TC08">
+                <methods>
+                    <include name="alreadyExistsTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us10.TC01">
+                <methods>
+                    <include name="tooShortMessageTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us10.TC02">
+                <methods>
+                    <include name="weekMessageTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us10.TC03">
+                <methods>
+                    <include name="goodMessageTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us10.TC04">
+                <methods>
+                    <include name="strongMessageTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us11.TC01">
+                <methods>
+                    <include name="myAccountVisibility"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us11.TC02">
+                <methods>
+                    <include name="dataVisibilityTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hilal.us11.TC03">
+                <methods>
+                    <include name="dataVisibilityTest2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+>>>>>>> main

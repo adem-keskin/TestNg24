@@ -4,7 +4,6 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.AllureAccountPage;
-import techproed.pages.AllureShoppingStore;
 import techproed.pages.AllureToYouHomePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -12,12 +11,10 @@ import techproed.utilities.ReusableMethods;
 
 public class US19Tests {
     @Test
-    public void US19_TC01(){
+    public void US19_TC01() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
-
         AllureAccountPage allureAccountPage = new AllureAccountPage();
-        AllureShoppingStore allureShoppingStore = new AllureShoppingStore();
 
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
 
@@ -33,16 +30,15 @@ public class US19Tests {
 
         ReusableMethods.waitFor(3);
 
-        allureShoppingStore.searchBox.sendKeys("Apple MacBook Pro 2015 | 13.3",Keys.ENTER);
+        allureAccountPage.searchBox.sendKeys("Apple MacBook Pro 2015 | 13.3", Keys.ENTER);
 
     }
 
     @Test
-    public void US19_TC02(){
+    public void US19_TC02() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         AllureAccountPage allureAccountPage = new AllureAccountPage();
-        AllureShoppingStore allureShoppingStore = new AllureShoppingStore();
 
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
 
@@ -50,7 +46,7 @@ public class US19Tests {
 
         allureAccountPage.singInButton.submit();
 
-        allureShoppingStore.searchBox.sendKeys("Apple MacBook Pro 2015 | 13.3",Keys.ENTER);
+        allureAccountPage.searchBox.sendKeys("Apple MacBook Pro 2015 | 13.3", Keys.ENTER);
 
         allureAccountPage.addToCart.click();
 
@@ -59,7 +55,7 @@ public class US19Tests {
     }
 
     @Test
-    public void US19_TC03(){
+    public void US19_TC03() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         AllureAccountPage allureAccountPage = new AllureAccountPage();
@@ -83,7 +79,7 @@ public class US19Tests {
     }
 
     @Test
-    public void US19_TC04(){
+    public void US19_TC04() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         AllureAccountPage allureAccountPage = new AllureAccountPage();
@@ -107,7 +103,7 @@ public class US19Tests {
     }
 
     @Test
-    public void US19_TC05(){
+    public void US19_TC05() {
 
         AllureToYouHomePage allureToYouHomePage = new AllureToYouHomePage();
         AllureAccountPage allureAccountPage = new AllureAccountPage();
@@ -124,15 +120,24 @@ public class US19Tests {
 
         ReusableMethods.waitFor(3);
 
+        allureAccountPage.searchBox.sendKeys("Apple MacBook Pro 2015 | 13.3", Keys.ENTER);
+
+        allureAccountPage.addToCart.click();
+
         allureAccountPage.addToCartBox.click();
 
         allureAccountPage.checkOutBox.click();
 
-        allureAccountPage.payAtTheDoor.submit();
-
         ReusableMethods.waitFor(5);
 
-        allureAccountPage.placeOrderButton.click();
+        allureAccountPage.payAtTheDoor.submit();
+
+        ReusableMethods.waitFor(3);
+
+        allureAccountPage.placeOrderButton.submit();
+
+        ReusableMethods.waitFor(3);
+
     }
 
 }

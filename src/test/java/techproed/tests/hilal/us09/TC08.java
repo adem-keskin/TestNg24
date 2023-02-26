@@ -82,8 +82,9 @@ public class TC08 {
         Driver.getDriver().switchTo().window(window1);
 
         //15- Admin verification code textbox ına kodu yapıştırır
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         ReusableMethods.typeWithJS(vendorRegisterPage.verificationCodeTextBox, verification);
+        ReusableMethods.waitFor(3);
 
         //16- Admin password textbox ına valid bir değer girer
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
@@ -131,6 +132,8 @@ public class TC08 {
         Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
 
         Driver.closeDriver();
+
+
 
 
 

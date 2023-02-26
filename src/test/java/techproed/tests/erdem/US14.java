@@ -1,4 +1,4 @@
-package techproed.tests.erdem;
+package techproed.tests;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -15,9 +15,7 @@ import java.util.List;
 
 import static techproed.utilities.Driver.driver;
 
-
 public class US14 {
-
     @Test
     public void TC01() throws InterruptedException {
 
@@ -36,13 +34,12 @@ public class US14 {
             System.out.println(w.getText());
             Assert.assertTrue(w.isDisplayed());
         }
-        //BITTI
-
+        Driver.closeDriver();
     }
 
     @Test
     public void TC02bykRes() throws InterruptedException {
-        //TC02-01,TC02-02
+
         Erdem1415 erdem1415 = new Erdem1415();
         ReusableMethods.addNew();
         Actions actions = new Actions(driver);
@@ -54,27 +51,12 @@ public class US14 {
         ReusableMethods.waitFor(3);
         erdem1415.selectOk.click();
         Assert.assertTrue(erdem1415.bykResGör.isDisplayed());
-
-
-
-
-     /*
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        erdem1415.kckRes.click();
-        //erdem1415.UploadFiles.click();
-        erdem1415.selectFiles.click();
-        ReusableMethods.uploadFilePath("C:\\Users\\hanno\\Desktop\\TestNGProje\\Screenshot_1.png");
-        ReusableMethods.waitFor(3);
-        erdem1415.selectOk.click();
-
-      */
-
-        //TC02-03,TC02,04
+        Driver.closeDriver();
 
     }
     @Test
     public void TC02kckRes() throws InterruptedException {
-        //TC02-01,TC02-02
+
         Erdem1415 erdem1415 = new Erdem1415();
         ReusableMethods.addNew();
         Actions actions = new Actions(driver);
@@ -84,14 +66,12 @@ public class US14 {
         erdem1415.kckResEkle.click();
         erdem1415.addToGalery.click();
         // Assert.assertTrue(erdem1415.kckResGör.isDisplayed());
-
-        //BITTI
+        Driver.closeDriver();
 
     }
 
     @Test
     public void TC03() throws InterruptedException {
-
 
         Erdem1415 erdem1415 = new Erdem1415();
         ReusableMethods.addNew();
@@ -115,6 +95,7 @@ public class US14 {
         erdem1415.des.sendKeys("des");
         Assert.assertTrue(erdem1415.desDogrulama.isDisplayed());
         System.out.println(erdem1415.desDogrulama.getText());
+        Driver.closeDriver();
 
         //BITTI
 
@@ -133,8 +114,8 @@ public class US14 {
         Assert.assertTrue(erdem1415.arabalarCategory.isDisplayed());
         erdem1415.arabalarClick.click();
         Assert.assertTrue(erdem1415.arabalarClick.isSelected());
+        Driver.closeDriver();
 
-        //BITTI
     }
 
     @Test
@@ -158,9 +139,10 @@ public class US14 {
         String sectigimOption = select.getFirstSelectedOption().getText();
         System.out.println("SECTİGİM OPTİON : " + sectigimOption);
         erdem1415.categoryAddButton.click();
+        Driver.closeDriver();
+
         //Assert.assertTrue(erdem1415.eklenenCategoryGörünme.isDisplayed());
 
-        //BITTI
 
     }
 
@@ -178,7 +160,8 @@ public class US14 {
         Assert.assertTrue(erdem1415.ackBrands.isDisplayed());
         erdem1415.ackBrands.click();
         Assert.assertTrue(erdem1415.ackBrands.isSelected());
-        //BITTI
+        Driver.closeDriver();
+
     }
 
     @Test
@@ -192,16 +175,15 @@ public class US14 {
         //TC07-01
         erdem1415.addNewProductBrandsButton.click();
         erdem1415.productBrandsNameBox.sendKeys(ConfigReader.getProperty("brandsname"));
-
         //TV07-02
         Select select = new Select(erdem1415.parentTaxonomiDD);
         select.selectByVisibleText("Green Grass");
         String sectigimOption = select.getFirstSelectedOption().getText();
         System.out.println("SECTİGİM OPTİON : " + sectigimOption);
         erdem1415.bransAddButton.click();
+        Driver.closeDriver();
         //driver.switchTo().alert().accept();
 
-        //BTTI ASAGIDA AYRICA DUGRULAMA YAPTIM
     }
 
     @Test
@@ -219,7 +201,8 @@ public class US14 {
         erdem1415.hazirTags.click();
         System.out.println(erdem1415.tagsBox.getText());
         Assert.assertTrue(erdem1415.tagsBox.isDisplayed());
-        //BTTI ASAGIDA AYRICA DUGRULAMA YAPTIM
+        Driver.closeDriver();
+
     }
 
     @Test
@@ -239,12 +222,13 @@ public class US14 {
             Assert.assertTrue(w.isDisplayed());
 
         }
-        //BITTI
+        Driver.closeDriver();
+
     }
 
     @Test
 
-    public void Dogrulamalar14() throws InterruptedException {
+    public void DogrulamalarUs14() throws InterruptedException {
 
         Erdem1415 erdem1415 = new Erdem1415();
 
@@ -262,10 +246,9 @@ public class US14 {
         Assert.assertTrue(erdem1415.tagsGör.isDisplayed());
         System.out.println(erdem1415.brandsgör.getText());
         System.out.println(erdem1415.tagsGör.getText());
+        Driver.closeDriver();
 
     }
 }
-
-
 
 

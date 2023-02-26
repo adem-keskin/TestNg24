@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" preserve-order="true"
+          name="/Users/kubraarslan/IdeaProjects/TestNg24/src/test/java/techproed/tests/Kadir">
+        <classes>
+            <class name="techproed.tests.Kadir.US12">
+                <methods>
+                    <include name="pozitiveFullTestUS12TC1"/>
+                    <include name="pozitiveBosCompanyTestUS12TC2"/>
+                    <include name="pozitiveBosApartmentUS12TC3"/>
+                    <include name="negativeBosFirstNameTestUS12TC4"/>
+                    <include name="negativeBosLastNameTestUS12TC5"/>
+                    <include name="negativeBosStreetTestUS12TC6"/>
+                    <include name="negativeBosPostCodeTestUS12TC7"/>
+                    <include name="negativeBosTownCityTestUS12TC8"/>
+                    <include name="negativeBosPhoneTestUS12TC9"/>
+                    <include name="negativeBosEmailTestUS12TC10"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.Kadir.US13">
+                <methods>
+                    <include name="pozitiveFullTestUS13TC1"/>
+                    <include name="pozitiveBosCompanyTestUS13TC2"/>
+                    <include name="pozitiveBosApartmanTestUS13TC3"/>
+                    <include name="negativeBosFirstNameTestUS13TC4"/>
+                    <include name="negativeBosLastNameTestUS13TC5"/>
+                    <include name="negativeBosStreetTestUS13TC6"/>
+                    <include name="negativeBosPostCodeTestUS13TC7"/>
+                    <include name="negativeBosTownCityTestUS13TC8"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

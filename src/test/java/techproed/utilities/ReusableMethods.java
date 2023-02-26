@@ -4,10 +4,17 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+
+
 import techproed.pages.Erdem1415;
+
+
+import techproed.pages.HomePageUS12;
+
 import techproed.pages.HomePageUS3;
 import techproed.pages.MedineProductsPage01;
 import techproed.pages.MedineStoreManagerPage01;
+
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -277,12 +284,12 @@ public class ReusableMethods {
         Actions actions = new Actions(Driver.getDriver());
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Allure2You"));
-        product.signInButton.click();
+        ReusableMethods.clickByJS(product.signInButton);
         Assert.assertTrue(product.signInPage.isDisplayed());
         product.signInUsername.sendKeys(ConfigReader.getProperty("vendorEmail"), Keys.TAB);
         product.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"), Keys.ENTER);
         ReusableMethods.waitFor(3);
-        product.myAccountButton.click();
+        ReusableMethods.clickByJS(product.myAccountButton);
         Assert.assertTrue(product.helloText.isDisplayed());
     }
 
@@ -296,9 +303,9 @@ public class ReusableMethods {
     public static void medineStoreManager() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
-        product2.storeManagerButton.click();
+        ReusableMethods.clickByJS(product2.storeManagerButton);
         Assert.assertTrue(product2.storeManagerText.isDisplayed());
-        product2.productsButton.click();
+        ReusableMethods.clickByJS(product2.productsButton);
         Assert.assertTrue(product2.productsText.isDisplayed());
     }
 
@@ -310,8 +317,24 @@ public class ReusableMethods {
     public static void medineAddNewProduct() {
         MedineStoreManagerPage01 product2 = new MedineStoreManagerPage01();
         Actions actions = new Actions(Driver.getDriver());
-        product2.addNewProductDashboardButton.click();
+        ReusableMethods.clickByJS(product2.addNewProductDashboardButton);
         Assert.assertTrue(product2.addProductText.isDisplayed());
+    }
+
+
+
+
+
+    public static void loginSingIn1(String email, String Password) {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        HomePageUS12 homePage = new HomePageUS12();
+        homePage.signIn.click();
+
+        homePage.email.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        homePage.password.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        homePage.signInButonu.click();
+
+
     }
 
     public static void uploadFilePath(String filePath){
