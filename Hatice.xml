@@ -6,8 +6,8 @@
     </listeners>
     <test verbose="2" preserve-order="true"
           name="C:/Users/zafer/IdeaProjects/TestNg24/src/test/java/techproed/tests/hatice">
-      <packages>
-          <package name="techproed.tests.hatice"></package>
-      </packages>
+        <packages>
+            <package name="techproed.tests.hatice"></package>
+        </packages>
     </test>
 </suite>
