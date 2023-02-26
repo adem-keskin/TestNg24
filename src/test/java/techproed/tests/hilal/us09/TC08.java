@@ -111,15 +111,15 @@ public class TC08 {
         allureAccountPage.logOut.click();
 
         allureToYouHomePage.registerButton.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
       //  vendorRegisterPage.vendorRegistrationTitle.click();
         allureToYouHomePage.becomeAVendor.click();
 
 
         //21- Admin aynı bilgiler tekrar girer
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         vendorRegisterPage.verificationCodeTextBox.sendKeys("123456");
         ReusableMethods.waitFor(3);
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));

@@ -25,26 +25,30 @@ public class TC02 {
 
         //02- Vendor sağ üstten Sign In butonuna tıklar
         allureToYouHomePage.signInButton.click();
+        ReusableMethods.waitFor(1);
 
         //03- Vendor email textbox ına tıklar
-        ReusableMethods.waitFor(2);
         signInPage.signInEmailTextBox.click();
+        ReusableMethods.waitFor(1);
 
         //04- Vendor textbox a email adresini girer
         signInPage.signInEmailTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        ReusableMethods.waitFor(1);
 
         //05- Vendor Password textbox ına tıklar
         signInPage.signInPassword.click();
 
         //06- Vendor textbox a parolasını girer
         signInPage.signInPassword.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        ReusableMethods.waitFor(1);
 
         //07- Vendor Sign In butonuna tıklar
         signInPage.signInButton.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
 
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //09- Vendor My Account yazısına tıklar
         allureAccountPage.myAccountText2.click();
@@ -52,20 +56,25 @@ public class TC02 {
         //10- Vendor Orders logosunu gördüğünü doğrular
         Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(allureAccountPage.ordersLogo.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //11- Vendor Downloads logosunu gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.downloadsLogo.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //12- Vendors Addresses logosunu gördügünü dogrular
         Assert.assertTrue(allureAccountPage.addressesLogo.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //13- Vendor Account details logosunu gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.accountDetailsButton.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //14- Vendor Wishlist logosunu gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.wishlistLogo.isDisplayed());
+        ReusableMethods.waitFor(1);
 
         //15- Vendor Logout logosunu gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.logoutLogo.isDisplayed());

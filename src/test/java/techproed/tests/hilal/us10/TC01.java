@@ -25,9 +25,11 @@ public class TC01 {
 
         //02- Admin Register butonuna tıklar
         allureToYouHomePage.registerButton.click();
+        ReusableMethods.waitFor(1);
 
         //03- Admin "Become a Vendor" butonuna tıklar
         allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.waitFor(1);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
@@ -35,11 +37,12 @@ public class TC01 {
         //05- Admin password butonuna tıklar
         Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.ARROW_DOWN).perform();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         vendorRegisterPage.vendorPassword.click();
 
         //06- Admin parola girer
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("tooShort"));
+        ReusableMethods.waitFor(1);
 
         //07- Admin "too short" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.tooShortMessage.isDisplayed());
