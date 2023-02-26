@@ -97,6 +97,8 @@ public class TC07 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(vendorRegisterPage.registrationSuccessfully.isDisplayed());
 
+        Driver.closeDriver();
+
 
     }
 }

@@ -63,6 +63,8 @@ public class TC03 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
 
+        Driver.closeDriver();
+
 
     }
 }

@@ -44,6 +44,8 @@ public class TC01 {
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
 
+        Driver.closeDriver();
+
 
     }
 }

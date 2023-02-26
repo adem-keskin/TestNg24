@@ -78,6 +78,8 @@ public class TC04 {
         //15- Admin verification code textbox ına kodu yapıştırır
         ReusableMethods.typeWithJS(vendorRegisterPage.verificationCodeTextBox, verification);
 
+        Driver.closeDriver();
+
 
 
     }

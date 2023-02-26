@@ -130,6 +130,8 @@ public class TC08 {
         //22- Admin "This Email already exists. Please login to the site and apply as vendor." yazısını görür
         Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
 
+        Driver.closeDriver();
+
 
 
 

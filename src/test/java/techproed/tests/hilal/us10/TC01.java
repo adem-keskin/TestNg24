@@ -44,6 +44,8 @@ public class TC01 {
         //07- Admin "too short" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.tooShortMessage.isDisplayed());
 
+        Driver.closeDriver();
+
 
 
 

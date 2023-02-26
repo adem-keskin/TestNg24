@@ -60,6 +60,8 @@ public class TC02 {
         WebElement emailde = Driver.getDriver().findElement(By.id("user_email"));
         emailde.sendKeys(Keys.COMMAND + "V");
 
+        Driver.closeDriver();
+
 
 
     }
