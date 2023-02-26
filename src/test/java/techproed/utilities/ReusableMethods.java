@@ -251,14 +251,15 @@ public class ReusableMethods {
     HomePageUS3 homePage3 = new HomePageUS3();
     // try {
             Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+            ReusableMethods.waitFor(3);
            homePage3 .signIn.click();
-            ReusableMethods.waitFor(2);
+            ReusableMethods.waitFor(3);
            homePage3.email.sendKeys(ConfigReader.getProperty("email"));
-            ReusableMethods.waitFor(2);
+            ReusableMethods.waitFor(3);
             homePage3.password.sendKeys(ConfigReader.getProperty("password"));
-            ReusableMethods.waitFor(2);
+            ReusableMethods.waitFor(3);
             homePage3.signInButonu.click();
-            ReusableMethods.waitFor(2);
+            ReusableMethods.waitFor(3);
     //   } catch (Exception e) {
 
 //        }
