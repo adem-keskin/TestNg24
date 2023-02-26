@@ -81,6 +81,8 @@ public class TC05 {
         //16- Admin password textbox ına valid bir değer girer
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
 
+        Driver.closeDriver();
+
 
 
 

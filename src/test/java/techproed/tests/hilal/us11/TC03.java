@@ -74,6 +74,8 @@ public class TC03 {
         //18- Vendor Logout datasını gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.logout.isDisplayed());
 
+        Driver.closeDriver();
+
 
 
     }

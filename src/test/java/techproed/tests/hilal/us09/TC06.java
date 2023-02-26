@@ -86,6 +86,8 @@ public class TC06 {
         //17- Admin confirm password hesabına valid bir değeri tekrar girer
         vendorRegisterPage.vendorConfirmPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
 
+        Driver.closeDriver();
+
 
 
     }

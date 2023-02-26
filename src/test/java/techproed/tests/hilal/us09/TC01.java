@@ -26,6 +26,8 @@ public class TC01 {
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
 
+        Driver.closeDriver();
+
 
 
     }

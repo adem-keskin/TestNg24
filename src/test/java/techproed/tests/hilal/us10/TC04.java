@@ -42,5 +42,7 @@ public class TC04 {
         //07- Admin "strong" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.strongMessage.isDisplayed());
 
+        Driver.closeDriver();
+
     }
 }
