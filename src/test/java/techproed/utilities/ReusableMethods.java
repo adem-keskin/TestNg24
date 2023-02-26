@@ -257,34 +257,20 @@ public class ReusableMethods {
     }
 
     public static void loginSingIn() {
-<<<<<<< HEAD
-    HomePageUS3 homePage3 = new HomePageUS3();
-    // try {
-            Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
-            ReusableMethods.waitFor(3);
-           homePage3 .signIn.click();
-            ReusableMethods.waitFor(3);
-           homePage3.email.sendKeys(ConfigReader.getProperty("email"));
-            ReusableMethods.waitFor(3);
-            homePage3.password.sendKeys(ConfigReader.getProperty("password"));
-            ReusableMethods.waitFor(3);
-            homePage3.signInButonu.click();
-            ReusableMethods.waitFor(3);
-    //   } catch (Exception e) {
-=======
+
         HomePageUS3 homePage3 = new HomePageUS3();
         // try {
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         homePage3.signIn.click();
         ReusableMethods.waitFor(2);
-        homePage3.email.sendKeys(ConfigReader.getProperty("email"));
+        homePage3.email.sendKeys(ConfigReader.getProperty("positive_email"));
         ReusableMethods.waitFor(2);
-        homePage3.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage3.password.sendKeys(ConfigReader.getProperty("positive_password"));
         ReusableMethods.waitFor(2);
         homePage3.signInButonu.click();
         ReusableMethods.waitFor(2);
         //   } catch (Exception e) {
->>>>>>> fa3b676f1deb221903febbea26b900d7c53364ac
+
 
 //        }
 //        try {

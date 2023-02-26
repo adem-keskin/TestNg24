@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/zafer/IdeaProjects/TestNg24/src/test/java/techproed/tests/hatice">
+        <classes>
+            <class name="techproed.tests.hatice.Hatice_US03">
+                <methods>
+                    <include name="pozitiveTestUS3TC1TC2"/>
+                    <include name="negativeTestNotFirstNameUS3"/>
+                    <include name="negativeTestNotLastNameUS3"/>
+                    <include name="negativeTestNotStreetAddressUS3"/>
+                    <include name="negativeTestNotPostCodeUS3"/>
+                    <include name="negativeTestNotTownCityUS3"/>
+                    <include name="negativeTestNotPhoneUS3"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.hatice.Hatice_US04">
+                <methods>
+                    <include name="pozitiveTestUS4TC1TC2"/>
+                    <include name="negativeTestNotFirstNameUS4"/>
+                    <include name="negativeTestNotLastNameUS4"/>
+                    <include name="negativeTestNotStreetAddressUS4"/>
+                    <include name="negativeTestNotPostCodeUS4"/>
+                    <include name="negativeTestNotTownCityUS3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
