@@ -256,6 +256,8 @@ public class Hatice_US03 {
         ReusableMethods.getScreenshot("Negative Phone");
         ReusableMethods.waitFor(2);
         Driver.closeDriver();
+
+
     }
 
 }
