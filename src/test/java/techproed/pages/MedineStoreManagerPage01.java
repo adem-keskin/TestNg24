@@ -69,7 +69,7 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//input[@value='232']")
     public WebElement categorieBookMedien;
 
-    @FindBy (xpath = "//div[@class='wcfm-message']" )  /*  //span[@class='wcicon-status-completed'] */
+    @FindBy (xpath = "//div[contains(text(),'Product Successfully Published.')]" )  /* //div[@class='wcfm-message'] //span[@class='wcicon-status-completed'] //div[contains(text(),'Product Successfully Published.')] */
     public WebElement successMessage;
 
     @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")

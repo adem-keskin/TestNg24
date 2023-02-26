@@ -2,8 +2,6 @@ package techproed.tests.medine;
 
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -59,7 +57,8 @@ public class US16_TC01_05 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-        Driver.getDriver().close();
+
+      //  Driver.getDriver().close();
 
     }
 
@@ -105,7 +104,8 @@ public class US16_TC01_05 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-     //   Driver.closeDriver();
+
+        //   Driver.closeDriver();
     }
 
     @Test
@@ -177,7 +177,7 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-     //   Driver.closeDriver();
+        //   Driver.closeDriver();
     }
 
     @Test
@@ -243,27 +243,26 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(3);
         //27. Kullanici Submit e tiklar.
         product2.mainPage.click();
-        actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(4);
 
         //ReusableMethods.waitFor(3);
 
-        product2.submitButton.click();
+        // product2.submitButton.click();
 
-      //  ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(5);
+        ReusableMethods.clickByJS(product2.submitButton);
+        //ReusableMethods.waitFor(7);
         //28. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(5);
+        // ReusableMethods.waitFor(5);
 
 
-        ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
-        ReusableMethods.clickByJS(product2.logOut);
+         ReusableMethods.clickByJS(product2.signOut);
+         ReusableMethods.waitFor(1);
+         ReusableMethods.clickByJS(product2.logOut);
 
-     //   Driver.closeDriver();
+      //  Driver.closeDriver();
     }
-
 
 
     @Test
@@ -302,6 +301,6 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+      //  Driver.closeDriver();
     }
 }

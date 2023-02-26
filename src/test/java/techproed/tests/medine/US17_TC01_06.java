@@ -123,10 +123,10 @@ public class US17_TC01_06 {
         ReusableMethods.clickByJS(product2.categorieBookMedien);
         // 25. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(3);
+        //  ReusableMethods.waitFor(3);
         // 26. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(3);
+        //  ReusableMethods.waitFor(3);
 
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
@@ -170,8 +170,7 @@ public class US17_TC01_06 {
     23. Kullanici Size alaninda tikladigi size in göründügünü dogrular.
      */
 
-
-        //
+        //   Driver.closeDriver();
     }
 
     @Test
@@ -235,8 +234,8 @@ public class US17_TC01_06 {
         // 20. Kullanici acilan Allert kutucuguna yeni color u girer.
         // 21. Kullanici OK butonuna tiklar.
         Driver.getDriver().switchTo().alert().sendKeys("Kiiirmizii");
-       // ReusableMethods.waitFor(3);
-       // Driver.getDriver().switchTo().alert().accept();
+        // ReusableMethods.waitFor(3);
+        // Driver.getDriver().switchTo().alert().accept();
         ReusableMethods.waitFor(5);
 
         // 22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
@@ -251,8 +250,8 @@ public class US17_TC01_06 {
         // 25. Kullanici acilan Allert kutucuguna yeni size i girer.
         // 26. Kullanici OK butonuna tiklar.
         Driver.getDriver().switchTo().alert().sendKeys("MMMSSS");
-      //  ReusableMethods.waitFor(3);
-       // Driver.getDriver().switchTo().alert().accept();
+        //  ReusableMethods.waitFor(3);
+        // Driver.getDriver().switchTo().alert().accept();
         ReusableMethods.waitFor(5);
 
         // 27. Kullanici Size alaninda girilen size in göründügünü dogrular.
@@ -272,9 +271,7 @@ public class US17_TC01_06 {
         ReusableMethods.clickByJS(product2.variationsSizeDropDown);
         ReusableMethods.waitFor(3);
 
-
         // Driver.closeDriver();
-
     }
 
     @Test
@@ -320,8 +317,7 @@ public class US17_TC01_06 {
     30. Kullanici secilen size in gorundugunu dogrular.
      */
 
-
-     //   Driver.closeDriver();
+        //   Driver.closeDriver();
     }
 
 
@@ -355,7 +351,7 @@ public class US17_TC01_06 {
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
         ReusableMethods.waitFor(4);
         // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
-        actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(4);
 
@@ -365,7 +361,6 @@ public class US17_TC01_06 {
         ReusableMethods.clickByJS(product2.logOut);
 
         //   Driver.closeDriver();
-
     }
 
 

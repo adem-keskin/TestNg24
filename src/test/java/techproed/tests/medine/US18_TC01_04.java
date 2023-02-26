@@ -223,17 +223,17 @@ public class US18_TC01_04 {
         ReusableMethods.clickByJS(product2.categorieBookMedien);
         // 26. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(4);
+        //ReusableMethods.waitFor(4);
         // 27. Kullanici ürün basariyla eklendi yazisinin görüldügünü dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
         ReusableMethods.waitFor(4);
 
-        ReusableMethods.waitFor(1);
-        ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
-        ReusableMethods.clickByJS(product2.logOut);
+        // ReusableMethods.waitFor(1);
+         ReusableMethods.clickByJS(product2.signOut);
+         ReusableMethods.waitFor(1);
+         ReusableMethods.clickByJS(product2.logOut);
 
-       // Driver.closeDriver();
+        // Driver.closeDriver();
     }
 
     @Test
@@ -264,17 +264,18 @@ public class US18_TC01_04 {
         // 14. Kullanici eklenen urunun isminin Products Sayfasinda göründügünü dogrular.
         Assert.assertTrue(product2.pratikDusunme2ListName.isDisplayed());
         ReusableMethods.waitFor(3);
+
         // 15. Kullanici eklenen urunun resminin Products Sayfasinda göründügünü dogrular.
         actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(4);
 
-        ReusableMethods.waitFor(1);
+       // ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+      //  Driver.closeDriver();
     }
 
 }
