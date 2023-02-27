@@ -84,7 +84,7 @@ public class MedineStoreManagerPage01 {
     @FindBy(xpath = "//*[@class='login logout inline-type']")
     public WebElement signOut;
 
-    @FindBy(linkText = "Log out")
+    @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logOut;
 
 
@@ -106,7 +106,7 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//div[@id='wcfm_products_manage_form_attribute_head']")
     public WebElement attributeButton;
 
-    @FindBy (xpath = "(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/okul-esyalari-150x150.jpg'])[1]")
+    @FindBy (xpath = "(//img[@class='attachment-thumbnail size-thumbnail'])[13]")
     public WebElement listeUrunResmi;
 
     @FindBy (xpath = "//img[@id='featured_img_display']")
@@ -158,7 +158,23 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//a[@class='nav-link active']")
     public WebElement specificationTab;
 
+    @FindBy (xpath = "//(//input[@class='select2-search__field'])[2]")////span[@aria-expanded='true']//input[@placeholder='Search for an attribute ...']
+    public WebElement colorDropDown;
 
+    @FindBy (xpath = "//span[@class='select2 select2-container select2-container--default select2-container--above select2-container--focus']//input[@placeholder='Search for an attribute ...']") //(//li[@class='select2-search select2-search--inline'])[3]
+    public WebElement sizeDropDown;
+
+    @FindBy (xpath = "//input[@id='attributes_is_active_1']")
+    public WebElement colorAktiveTick;
+
+    @FindBy (xpath = "//input[@id='attributes_is_active_2']")
+    public WebElement sizeAktiveTick;
+
+    @FindBy(xpath = "(//td[@class='woocommerce-product-attributes-item__value'])[1]")
+    public WebElement colorVisibleTextKontrol;
+
+    @FindBy(xpath = "(//td[@class='woocommerce-product-attributes-item__value'])[2]")
+    public WebElement sizeVisibleTextKontrol;
 
 
 
