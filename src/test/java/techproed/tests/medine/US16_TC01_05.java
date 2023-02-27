@@ -57,7 +57,8 @@ public class US16_TC01_05 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-        Driver.getDriver().close();
+
+      //  Driver.getDriver().close();
 
     }
 
@@ -103,7 +104,8 @@ public class US16_TC01_05 {
         ReusableMethods.clickByJS(product2.signOut);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
-        Driver.closeDriver();
+
+        //   Driver.closeDriver();
     }
 
     @Test
@@ -175,11 +177,11 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+        //   Driver.closeDriver();
     }
 
     @Test
-    public void test04() {
+    public void test04() throws InterruptedException {
          /*
     1. Kullanici Url'e gider.
     2. Kullanici anasayfaya geldigini dogrular.
@@ -238,20 +240,30 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(2);
         //26. Kullanici Categori secer
         ReusableMethods.clickByJS(product2.categorieBookMedien);
+        ReusableMethods.waitFor(3);
         //27. Kullanici Submit e tiklar.
+        product2.mainPage.click();
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(4);
+
+        //ReusableMethods.waitFor(3);
+
+        // product2.submitButton.click();
+
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(5);
+        //ReusableMethods.waitFor(7);
         //28. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        ReusableMethods.waitFor(5);
+        // ReusableMethods.waitFor(5);
 
-        ReusableMethods.waitFor(1);
-        ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
-        ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+         ReusableMethods.clickByJS(product2.signOut);
+         ReusableMethods.waitFor(1);
+         ReusableMethods.clickByJS(product2.logOut);
+
+      //  Driver.closeDriver();
     }
+
 
     @Test
     public void test05() {
@@ -289,6 +301,6 @@ public class US16_TC01_05 {
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(product2.logOut);
 
-        Driver.closeDriver();
+      //  Driver.closeDriver();
     }
 }

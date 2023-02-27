@@ -23,26 +23,32 @@ public class TC01 {
 
         //02- Vendor sağ üstten Sign In butonuna tıklar
         allureToYouHomePage.signInButton.click();
+        ReusableMethods.waitFor(1);
 
         //03- Vendor email textbox ına tıklar
-        ReusableMethods.waitFor(2);
         signInPage.signInEmailTextBox.click();
+        ReusableMethods.waitFor(1);
 
         //04- Vendor textbox a email adresini girer
         signInPage.signInEmailTextBox.sendKeys();
+        ReusableMethods.waitFor(1);
 
         //05- Vendor Password textbox ına tıklar
         signInPage.signInPassword.click();
+        ReusableMethods.waitFor(1);
 
         //06- Vendor textbox a parolasını girer
         signInPage.signInPassword.sendKeys();
+        ReusableMethods.waitFor(1);
 
         //07- Vendor Sign In butonuna tıklar
         signInPage.signInButton.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
 
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
+
+        Driver.closeDriver();
 
 
     }

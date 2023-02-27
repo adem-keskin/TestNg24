@@ -23,9 +23,16 @@ public class TC04 {
 
         //02- Admin Register butonuna tıklar
         allureToYouHomePage.registerButton.click();
+        ReusableMethods.waitFor(1);
 
         //03- Admin "Become a Vendor" butonuna tıklar
         allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
+
+        //03- Admin "Become a Vendor" butonuna tıklar
+        allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.waitFor(3);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
@@ -33,14 +40,25 @@ public class TC04 {
         //05- Admin password butonuna tıklar
         Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.ARROW_DOWN).perform();
-        ReusableMethods.waitFor(2);
+
+        ReusableMethods.waitFor(1);
+
+        ReusableMethods.waitFor(3);
+
         vendorRegisterPage.vendorPassword.click();
 
         //06- Admin parola girer
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("strong"));
 
+        ReusableMethods.waitFor(1);
+
+        ReusableMethods.waitFor(3);
+
+
         //07- Admin "strong" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.strongMessage.isDisplayed());
+
+        Driver.closeDriver();
 
     }
 }

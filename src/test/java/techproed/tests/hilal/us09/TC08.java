@@ -34,7 +34,9 @@ public class TC08 {
         allureToYouHomePage.registerButton.click();
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVendor.click();
+        // allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+        ReusableMethods.waitFor(2);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
@@ -82,8 +84,9 @@ public class TC08 {
         Driver.getDriver().switchTo().window(window1);
 
         //15- Admin verification code textbox ına kodu yapıştırır
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         ReusableMethods.typeWithJS(vendorRegisterPage.verificationCodeTextBox, verification);
+        ReusableMethods.waitFor(3);
 
         //16- Admin password textbox ına valid bir değer girer
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
@@ -96,6 +99,7 @@ public class TC08 {
         //18- Admin register butonuna tıklar
         // vendorRegisterPage.registerButton.click();
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
+        ReusableMethods.waitFor(3);
 
         //19- Admin "Registration Successfully Completed." yazısını görür
         Assert.assertTrue(vendorRegisterPage.registrationSuccessfully.isDisplayed());
@@ -111,15 +115,16 @@ public class TC08 {
         allureAccountPage.logOut.click();
 
         allureToYouHomePage.registerButton.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
       //  vendorRegisterPage.vendorRegistrationTitle.click();
-        allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+       // allureToYouHomePage.becomeAVendor.click();
 
 
         //21- Admin aynı bilgiler tekrar girer
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         vendorRegisterPage.verificationCodeTextBox.sendKeys("123456");
         ReusableMethods.waitFor(3);
         vendorRegisterPage.vendorPassword.sendKeys(ConfigReader.getProperty("fakeMailPassword"));
@@ -129,6 +134,8 @@ public class TC08 {
 
         //22- Admin "This Email already exists. Please login to the site and apply as vendor." yazısını görür
         Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
+
+        Driver.closeDriver();
 
 
 
