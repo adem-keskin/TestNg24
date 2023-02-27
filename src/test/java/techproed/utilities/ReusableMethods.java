@@ -261,6 +261,7 @@ public class ReusableMethods {
         HomePageUS3 homePage3 = new HomePageUS3();
         // try {
         Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
+        ReusableMethods.waitFor(2);
         homePage3.signIn.click();
         ReusableMethods.waitFor(2);
         homePage3.email.sendKeys(ConfigReader.getProperty("positive_email"));

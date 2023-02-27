@@ -48,6 +48,7 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotFirstNameUS4() throws IOException {
         ReusableMethods.loginSingIn();
+        ReusableMethods.waitFor(2);
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.waitFor(2);
@@ -77,10 +78,12 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotLastNameUS4() throws IOException {
         ReusableMethods.loginSingIn();
+        ReusableMethods.waitFor(2);
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
         ReusableMethods.clickByJS(homePage4.addButonu);
+        ReusableMethods.waitFor(2);
         homePage4.firstName.clear();
         homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
@@ -104,13 +107,16 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotStreetAddressUS4() throws IOException {
         ReusableMethods.loginSingIn();
+        ReusableMethods.waitFor(2);
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(homePage4.adresses);
         ReusableMethods.clickByJS(homePage4.addButonu);
         homePage4.firstName.clear();
         homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
+        ReusableMethods.waitFor(2);
         homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName1"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
@@ -131,6 +137,7 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotPostCodeUS4() throws IOException {
         ReusableMethods.loginSingIn();
+        ReusableMethods.waitFor(2);
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
@@ -161,11 +168,14 @@ public class Hatice_US04 {
         ReusableMethods.loginSingIn();
         HomePageUS4 homePage = new HomePageUS4();
         homePage.myAccount.click();
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(homePage.adresses);
         ReusableMethods.clickByJS(homePage.addButonu);
+        ReusableMethods.waitFor(2);
         homePage.firstName.clear();
         homePage.firstName.sendKeys(ConfigReader.getProperty("firstName"));
         homePage.lastName.clear();
+        ReusableMethods.waitFor(2);
         homePage.lastName.sendKeys(ConfigReader.getProperty("lastName"));
         Select select = new Select(homePage.country);
         select.selectByVisibleText("Germany");

@@ -190,9 +190,11 @@ public class Hatice_US03 {
 
         ReusableMethods.loginSingIn();
         HomePageUS3 homePage3=new HomePageUS3();
+        ReusableMethods.waitFor(2);
         homePage3.myAccount.click();
         ReusableMethods.clickByJS(homePage3.adresses);
         ReusableMethods.clickByJS(homePage3.addButonu);
+        ReusableMethods.waitFor(2);
         homePage3.firstName.clear();
         homePage3.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage3.lastName.clear();
