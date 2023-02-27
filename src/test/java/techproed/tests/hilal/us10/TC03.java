@@ -44,5 +44,7 @@ public class TC03 {
 
         //07- Admin "good" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.goodMessage.isDisplayed());
+
+        Driver.closeDriver();
     }
 }

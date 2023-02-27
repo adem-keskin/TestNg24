@@ -26,12 +26,16 @@ public class TC03 {
 
         //02- Admin Register butonuna tıklar
         allureToYouHomePage.registerButton.click();
+        ReusableMethods.waitFor(2);
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVendor.click();
+       // allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+        ReusableMethods.waitFor(2);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
+        ReusableMethods.waitFor(2);
 
         //05- Admin yeni sekmede ana sayfaya gider
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
@@ -39,6 +43,7 @@ public class TC03 {
         String window2 = Driver.getDriver().getWindowHandle();
 
         //06- Admin ana sayfadaki copy butonuna tıklar
+        ReusableMethods.waitFor(1);
         fakeMail.copyButton.click();
 
         //07- Admin ilk sekmeye geri döner
@@ -47,9 +52,11 @@ public class TC03 {
 
         //08- Admin email textbox ına tıklar
         vendorRegisterPage.vendorEmail.click();
+        ReusableMethods.waitFor(1);
 
         //09- Admin email adresini yapıştırır
         vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");
+        ReusableMethods.waitFor(1);
 
         //10- Admin re-send code butonuna tıklar
         Actions actions = new Actions(Driver.getDriver());
@@ -59,6 +66,8 @@ public class TC03 {
         //11- Admin "Verification code sent to your email:" uyarı mesajını alır
         ReusableMethods.waitFor(3);
         Assert.assertTrue(vendorRegisterPage.verificationMessage.isDisplayed());
+
+        Driver.closeDriver();
 
 
     }

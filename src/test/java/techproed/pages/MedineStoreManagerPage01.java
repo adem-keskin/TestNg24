@@ -69,14 +69,17 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "//input[@value='232']")
     public WebElement categorieBookMedien;
 
-    @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']" )  /*  //span[@class='wcicon-status-completed'] */
+    @FindBy (xpath = "//div[contains(text(),'Product Successfully Published.')]" )  /* //div[@class='wcfm-message'] //span[@class='wcicon-status-completed'] //div[contains(text(),'Product Successfully Published.')] */
     public WebElement successMessage;
 
     @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
     public WebElement addGalleryButton;
 
-    @FindBy (xpath = "//input[@name='submit-data']")
+    @FindBy (xpath = "//input[@id='wcfm_products_simple_submit_button']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "//main[@id='main']")
+    public WebElement mainPage;
 
     @FindBy(xpath = "//*[@class='login logout inline-type']")
     public WebElement signOut;
@@ -89,8 +92,8 @@ public class MedineStoreManagerPage01 {
     @FindBy (xpath = "(//a[@class='wcfm_product_title'])[1]")
     public WebElement pratikDusunme2ListName;
 
-    @FindBy (xpath = "((//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]") //(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]
-    public WebElement pratikDusunme2ListImage; //(//img[@class='attachment-thumbnail size-thumbnail'])[1]
+    @FindBy (xpath = "(//img[@class='attachment-thumbnail size-thumbnail'])[1]") //(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]
+    public WebElement pratikDusunme2ListImage; //(//img[@class='attachment-thumbnail size-thumbnail'])[1] //(//img[@src='https://allure2you.com/wp-content/uploads/2023/02/cozum-odakli-terapinin-amaci-nedir-150x150.jpg'])[3]
 
     // US18-EXTERNAL
 

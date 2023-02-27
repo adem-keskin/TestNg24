@@ -30,12 +30,15 @@ public class TC01 {
 
         //04- Vendor textbox a email adresini girer
         signInPage.signInEmailTextBox.sendKeys();
+        ReusableMethods.waitFor(1);
 
         //05- Vendor Password textbox ına tıklar
         signInPage.signInPassword.click();
+        ReusableMethods.waitFor(1);
 
         //06- Vendor textbox a parolasını girer
         signInPage.signInPassword.sendKeys();
+        ReusableMethods.waitFor(1);
 
         //07- Vendor Sign In butonuna tıklar
         signInPage.signInButton.click();
@@ -43,6 +46,8 @@ public class TC01 {
 
         //08- Vendor My Account yazısını görür
         Assert.assertTrue(allureAccountPage.myAccountText2.isDisplayed());
+
+        Driver.closeDriver();
 
 
     }

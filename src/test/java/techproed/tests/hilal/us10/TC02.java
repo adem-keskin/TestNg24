@@ -45,6 +45,8 @@ public class TC02 {
         //07- Admin "weak" uyarı mesajını görür
         Assert.assertTrue(vendorRegisterPage.weakMessage.isDisplayed());
 
+        Driver.closeDriver();
+
 
     }
 }

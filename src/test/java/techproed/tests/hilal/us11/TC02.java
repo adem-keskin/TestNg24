@@ -70,6 +70,8 @@ public class TC02 {
         //15- Vendor Logout logosunu gördüğünü doğrular
         Assert.assertTrue(allureAccountPage.logoutLogo.isDisplayed());
 
+        Driver.closeDriver();
+
 
 
 
