@@ -17,7 +17,6 @@ public class Hatice_US04 {
     public void pozitiveTestUS4TC1TC2() throws IOException, InterruptedException {
 
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.waitFor(2);
@@ -25,17 +24,17 @@ public class Hatice_US04 {
         ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(homePage4.addButonu);
         homePage4.firstName.clear();
-        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName"));
+        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
-        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName"));
+        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName1"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
         ReusableMethods.waitFor(2);
-        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress"));
+        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress1"));
         homePage4.postCode.clear();
-        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode"));
+        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode1"));
         homePage4.townCity.clear();
-        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity"));
+        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity1"));
         select = new Select(homePage4.state);
         select.selectByVisibleText("Bavaria");
         homePage4.saveAddressButonu.submit();
@@ -49,7 +48,6 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotFirstNameUS4() throws IOException {
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.waitFor(2);
@@ -59,15 +57,15 @@ public class Hatice_US04 {
         homePage4.firstName.clear();
         homePage4.firstName.sendKeys(ConfigReader.getProperty("negativefirstname"));
         homePage4.lastName.clear();
-        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName"));
+        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName1"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
         ReusableMethods.waitFor(2);
-        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress"));
+        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress1"));
         homePage4.postCode.clear();
-        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode"));
+        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode1"));
         homePage4.townCity.clear();
-        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity"));
+        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity1"));
         select = new Select(homePage4.state);
         select.selectByVisibleText("Bavaria");
         homePage4.saveAddressButonu.submit();
@@ -79,23 +77,22 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotLastNameUS4() throws IOException {
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
         ReusableMethods.clickByJS(homePage4.addButonu);
         homePage4.firstName.clear();
-        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName"));
+        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
         homePage4.lastName.sendKeys(ConfigReader.getProperty("negativelastname"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
         homePage4.streetAddress.clear();
-        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress"));
+        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress1"));
         homePage4.postCode.clear();
-        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode"));
+        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode1"));
         homePage4.townCity.clear();
-        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity"));
+        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity1"));
         select = new Select(homePage4.state);
         select.selectByVisibleText("Bavaria");
         homePage4.saveAddressButonu.submit();
@@ -107,23 +104,22 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotStreetAddressUS4() throws IOException {
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
         ReusableMethods.clickByJS(homePage4.addButonu);
         homePage4.firstName.clear();
-        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName"));
+        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
-        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName"));
+        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName1"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
         homePage4.streetAddress.clear();
         homePage4.streetAddress.sendKeys(ConfigReader.getProperty("negativeStreetAddress"));
         homePage4.postCode.clear();
-        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode"));
+        homePage4.postCode.sendKeys(ConfigReader.getProperty("postCode1"));
         homePage4.townCity.clear();
-        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity"));
+        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity1"));
         select = new Select(homePage4.state);
         select.selectByVisibleText("Bavaria");
         homePage4.saveAddressButonu.submit();
@@ -135,23 +131,22 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotPostCodeUS4() throws IOException {
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage4 = new HomePageUS4();
         homePage4.myAccount.click();
         ReusableMethods.clickByJS(homePage4.adresses);
         ReusableMethods.clickByJS(homePage4.addButonu);
         homePage4.firstName.clear();
-        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName"));
+        homePage4.firstName.sendKeys(ConfigReader.getProperty("firstName1"));
         homePage4.lastName.clear();
-        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName"));
+        homePage4.lastName.sendKeys(ConfigReader.getProperty("lastName1"));
         Select select = new Select(homePage4.country);
         select.selectByVisibleText("Germany");
         homePage4.streetAddress.clear();
-        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress"));
+        homePage4.streetAddress.sendKeys(ConfigReader.getProperty("streetAddress1"));
         homePage4.postCode.clear();
         homePage4.postCode.sendKeys(ConfigReader.getProperty("negativePostCode"));
         homePage4.townCity.clear();
-        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity"));
+        homePage4.townCity.sendKeys(ConfigReader.getProperty("townCity1"));
         select = new Select(homePage4.state);
         select.selectByVisibleText("Bavaria");
         homePage4.saveAddressButonu.submit();
@@ -164,7 +159,6 @@ public class Hatice_US04 {
     @Test
     public void negativeTestNotTownCityUS3() throws IOException {
         ReusableMethods.loginSingIn();
-        Driver.getDriver().get(ConfigReader.getProperty("allureHomePage"));
         HomePageUS4 homePage = new HomePageUS4();
         homePage.myAccount.click();
         ReusableMethods.clickByJS(homePage.adresses);

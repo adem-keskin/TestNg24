@@ -34,7 +34,9 @@ public class TC08 {
         allureToYouHomePage.registerButton.click();
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVendor.click();
+        // allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+        ReusableMethods.waitFor(2);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
@@ -97,6 +99,7 @@ public class TC08 {
         //18- Admin register butonuna tıklar
         // vendorRegisterPage.registerButton.click();
         ReusableMethods.clickByJS(vendorRegisterPage.registerButton);
+        ReusableMethods.waitFor(3);
 
         //19- Admin "Registration Successfully Completed." yazısını görür
         Assert.assertTrue(vendorRegisterPage.registrationSuccessfully.isDisplayed());
@@ -114,7 +117,8 @@ public class TC08 {
         allureToYouHomePage.registerButton.click();
         ReusableMethods.waitFor(5);
       //  vendorRegisterPage.vendorRegistrationTitle.click();
-        allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+       // allureToYouHomePage.becomeAVendor.click();
 
 
         //21- Admin aynı bilgiler tekrar girer
@@ -132,8 +136,6 @@ public class TC08 {
         Assert.assertTrue(vendorRegisterPage.emailInvalid.isDisplayed());
 
         Driver.closeDriver();
-
-
 
 
 
