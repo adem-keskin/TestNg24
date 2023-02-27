@@ -27,17 +27,22 @@ public class TC04 {
 
         //02- Admin Register butonuna tıklar
         allureToYouHomePage.registerButton.click();
+        ReusableMethods.waitFor(1);
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVendor.click();
+        // allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+        ReusableMethods.waitFor(2);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
+        ReusableMethods.waitFor(2);
 
         //05- Admin yeni sekmede ana sayfaya gider
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
         Driver.getDriver().get(ConfigReader.getProperty("fakeMailUrl"));
         String window2 = Driver.getDriver().getWindowHandle();
+        ReusableMethods.waitFor(1);
 
         //06- Admin ana sayfadaki copy butonuna tıklar
         fakeMail.copyButton.click();
@@ -48,6 +53,7 @@ public class TC04 {
 
         //08- Admin email textbox ına tıklar
         vendorRegisterPage.vendorEmail.click();
+        ReusableMethods.waitFor(1);
 
         //09- Admin email adresini yapıştırır
         vendorRegisterPage.vendorEmail.sendKeys(Keys.COMMAND + "V");

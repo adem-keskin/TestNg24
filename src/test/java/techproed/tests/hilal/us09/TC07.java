@@ -29,7 +29,9 @@ public class TC07 {
         allureToYouHomePage.registerButton.click();
 
         //03- Admin "Become a Vendor" butonuna tıklar
-        allureToYouHomePage.becomeAVendor.click();
+        // allureToYouHomePage.becomeAVendor.click();
+        ReusableMethods.clickByJS(allureToYouHomePage.becomeAVendor);
+        ReusableMethods.waitFor(2);
 
         //04- Admin Vendor Registration sayfasına yönlendirilir
         vendorRegisterPage.vendorRegistrationTitle.click();
