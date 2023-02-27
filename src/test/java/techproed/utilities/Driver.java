@@ -17,9 +17,14 @@ public class Driver {
         if (driver==null){
             switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+
+                    options.addArguments("--start-maximized");
+                    options.addArguments("--disable-extensions");
+
+                    driver = new ChromeDriver(options);
                     break;
+
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver=new FirefoxDriver();
@@ -38,7 +43,7 @@ public class Driver {
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         return driver;
     }
 

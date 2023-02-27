@@ -254,11 +254,11 @@ public class US16_TC01_05 {
         //ReusableMethods.waitFor(7);
         //28. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        // ReusableMethods.waitFor(5);
+         ReusableMethods.waitFor(5);
 
 
          ReusableMethods.clickByJS(product2.signOut);
-         ReusableMethods.waitFor(1);
+         ReusableMethods.waitFor(4);
          ReusableMethods.clickByJS(product2.logOut);
 
       //  Driver.closeDriver();

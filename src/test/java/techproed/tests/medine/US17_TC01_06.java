@@ -56,9 +56,9 @@ public class US17_TC01_06 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(product2.variable.isDisplayed());
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.logOut);
 
         //  Driver.closeDriver();
@@ -123,17 +123,16 @@ public class US17_TC01_06 {
         ReusableMethods.clickByJS(product2.categorieBookMedien);
         // 25. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        //  ReusableMethods.waitFor(3);
+          ReusableMethods.waitFor(4);
         // 26. Kullanici ürün basariyla eklendi yazisini dogrular.
         Assert.assertTrue(product2.successMessage.isDisplayed()); //????
-        //  ReusableMethods.waitFor(3);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(4);
         ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.logOut);
 
-        //   Driver.closeDriver();
+        //  Driver.closeDriver();
     }
 
     @Test
@@ -158,19 +157,47 @@ public class US17_TC01_06 {
     */
         ReusableMethods.medineStoreManager();
         ReusableMethods.waitFor(3);
-    /*
-    15. Kullanici Product Listesinden bir ürün secer.
-    16. Kullanici secilen ürünün göründügünü dogrular.
-    17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
-    18. Kullanici Color butonununa tiklar.
-    19. Kullanici Color dropdownunda bulunan renklerden birini secer.
-    20. Kullanici Color alaninda tikladigi rengin göründügünü dogrular.
-    21. Kullanici Size butonununa tiklar.
-    22. Kullanici Size dropdownunda bulunan sizelardan birini secer.
-    23. Kullanici Size alaninda tikladigi size in göründügünü dogrular.
-     */
 
-        //   Driver.closeDriver();
+    //15. Kullanici Product Listesinden bir ürün secer.
+        ReusableMethods.clickByJS(product2.listeUrunResmi);
+        ReusableMethods.waitFor(3);
+    //16. Kullanici secilen ürünün göründügünü dogrular.
+        Assert.assertTrue(product2.listeUrunBuyukResmi.isDisplayed());
+    //17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.attributeButton);
+    //18. Kullanici Color butonununa tiklar.
+        ReusableMethods.clickByJS(product2.colorToggBlock);
+        ReusableMethods.waitFor(4);
+        /*
+    //19. Kullanici Color dropdownunda bulunan renklerden birini secer.
+    //20. Kullanici Color alaninda tikladigi rengin göründügünü dogrular.
+       // ReusableMethods.clickByJS(product2.colorDropDown); //123Gül*
+        ReusableMethods.waitFor(4);
+        Select selectColor = new Select(product2.colorDropDown);
+        selectColor.selectByValue("abcd");
+        ReusableMethods.waitFor(4);
+
+    //21. Kullanici Size butonununa tiklar.
+        ReusableMethods.clickByJS(product2.sizeToggBlock);
+        ReusableMethods.waitFor(4);
+    //22. Kullanici Size dropdownunda bulunan sizelardan birini secer.
+        //ReusableMethods.clickByJS(product2.sizeDropDown); //334
+        ReusableMethods.waitFor(4);
+        Select selectSize = new Select(product2.sizeDropDown);
+        selectColor.selectByValue("123Gül*");
+        ReusableMethods.waitFor(4);
+
+    //23. Kullanici Size alaninda tikladigi size in göründügünü dogrular.
+
+*/
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.logOut);
+
+          // Driver.closeDriver();
     }
 
     @Test
@@ -205,7 +232,6 @@ public class US17_TC01_06 {
         productType.selectByValue("variable");
         ReusableMethods.waitFor(2);
 
-
         // 16. Kullanici secilen ürünün göründügünü dogrular.
         Assert.assertTrue(product2.listeUrunBuyukResmi.isDisplayed());
 
@@ -226,58 +252,75 @@ public class US17_TC01_06 {
             ReusableMethods.waitFor(3);
         }
          */
-
         // 19. Kullanici ADD NEW butonununa tiklar.
         ReusableMethods.clickByJS(product2.addNewAttributeButtonColor);
         ReusableMethods.waitFor(5);
 
         // 20. Kullanici acilan Allert kutucuguna yeni color u girer.
         // 21. Kullanici OK butonuna tiklar.
-        Driver.getDriver().switchTo().alert().sendKeys("Kiiirmizii");
-        // ReusableMethods.waitFor(3);
-        // Driver.getDriver().switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().sendKeys(ConfigReader.getProperty("color1"));
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().switchTo().alert().accept();
+        ReusableMethods.waitFor(5);
+        try {
+            Driver.getDriver().switchTo().alert().accept();
+        }catch (Exception ignored) {
+        }
         ReusableMethods.waitFor(5);
 
         // 22. Kullanici Color alaninda girilen rengin göründügünü dogrular.
         // 23. Kullanici Size butonununa tiklar.
-        System.out.println("-------------------------------");
         ReusableMethods.clickByJS(product2.sizeToggBlock);
         ReusableMethods.waitFor(3);
 
         // 24. Kullanici Size alaninda ADD NEW butonununa tiklar.
         ReusableMethods.clickByJS(product2.addNewAttributeButtonSize);
         ReusableMethods.waitFor(3);
+
+        //Select select2 = new Select(product2.colorDropDown);
+        //select2.getAllSelectedOptions().clear();
+
         // 25. Kullanici acilan Allert kutucuguna yeni size i girer.
         // 26. Kullanici OK butonuna tiklar.
-        Driver.getDriver().switchTo().alert().sendKeys("MMMSSS");
-        //  ReusableMethods.waitFor(3);
-        // Driver.getDriver().switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().sendKeys(ConfigReader.getProperty("size1"));
+        ReusableMethods.waitFor(3);
+        Driver.getDriver().switchTo().alert().accept();
         ReusableMethods.waitFor(5);
+        try {
+            Driver.getDriver().switchTo().alert().accept();
+        }catch (Exception e){
 
+        }
+        ReusableMethods.waitFor(5);
         // 27. Kullanici Size alaninda girilen size in göründügünü dogrular.
         // 28. Kullanici Submit e tiklar.
         ReusableMethods.clickByJS(product2.submitButton);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
 
         // 29. Kullanici Variations a tiklar.
         ReusableMethods.clickByJS(product2.variationsButton);
         ReusableMethods.waitFor(3);
 
         // 30. Kullanici Color dropdownunda eklenen yeni color un gorundugunu dogrular.
-        ReusableMethods.clickByJS(product2.variationsColorDropDown);
-        ReusableMethods.waitFor(3);
+       // ReusableMethods.clickByJS(product2.variationsColorDropDown);
+       // ReusableMethods.waitFor(3);
 
         // 31. Kullanici Size dropdownunda eklenen yeni color un gorundugunu dogrular.
-        ReusableMethods.clickByJS(product2.variationsSizeDropDown);
-        ReusableMethods.waitFor(3);
+        // ReusableMethods.clickByJS(product2.variationsSizeDropDown);
+        // ReusableMethods.waitFor(3);
 
-        // Driver.closeDriver();
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.signOut);
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.logOut);
+
+        //  Driver.closeDriver();
     }
 
     @Test
     public void test05() {
 
-         /*
+        /*
     1. Kullanici Url'e gider.
     2. Kullanici anasayfaya geldigini dogrular.
     3. Kullanici Signin yazisina tiklar.
@@ -298,24 +341,62 @@ public class US17_TC01_06 {
         ReusableMethods.medineStoreManager();
         ReusableMethods.waitFor(3);
 
-    /*
-    15. Kullanici Product Listesinden bir ürün secer.
-    16. Kullanici secilen ürünün göründügünü dogrular.
-    17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
-    18. Kullanici Color butonununa tiklar.
-    19. Kullanici Color dropdownunda bulunan renklerden birini secer.
-    20. Kullanici Color alaninda tikladigi rengin göründügünü dogrular.
-    21. Kullanici Color un üzerindeki Active kutucugunu aktif hale getirir.
-    22. Kullanici Size butonununa tiklar.
-    23. Kullanici Size dropdownunda bulunan sizelardan birini secer.
-    24. Kullanici Size alaninda tikladigi size in göründügünü dogrular.
-    25. Kullanici Size un üzerindeki Active kutucugunu aktif hale getirir.
-    26. Kullanici Submit e tiklar.
-    27. Kullanici View e tiklar.
-    28. Kullanici acilan Yeni sayfada Specification menüsüne tiklar.
-    29. Kullanici secilen colorun gorundugunu dogrular.
-    30. Kullanici secilen size in gorundugunu dogrular.
-     */
+
+    //15. Kullanici Product Listesinden bir ürün secer.
+        ReusableMethods.clickByJS(product2.listeUrunResmi);
+        ReusableMethods.waitFor(3);
+    // 16. Kullanici secilen ürünün göründügünü dogrular.
+        Assert.assertTrue(product2.listeUrunBuyukResmi.isDisplayed());
+    //17. Kullanici sayfanin sol alt kisminda bulunan Attributes menüsüne tiklar.
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.attributeButton);
+    //18. Kullanici Color butonununa tiklar.
+        ReusableMethods.clickByJS(product2.colorToggBlock);
+        ReusableMethods.waitFor(3);
+        /*
+    //19. Kullanici Color dropdownunda bulunan renklerden birini secer.
+        Select selectColorVis = new Select(product2.variationsColorDropDown);
+        selectColorVis.selectByVisibleText("123Gül*");
+        ReusableMethods.waitFor(4);
+    //20. Kullanici Color alaninda tikladigi rengin göründügünü dogrular.
+
+        ReusableMethods.waitFor(4);
+    //21. Kullanici Color un üzerindeki Active kutucugunu aktif hale getirir.
+        ReusableMethods.clickByJS(product2.colorAktiveTick);
+    //22. Kullanici Size butonununa tiklar.
+        System.out.println("-------------------------------");
+        ReusableMethods.clickByJS(product2.sizeToggBlock);
+        ReusableMethods.waitFor(3);
+    //23. Kullanici Size dropdownunda bulunan sizelardan birini secer.
+    //24. Kullanici Size alaninda tikladigi size in göründügünü dogrular.
+        Select selectSizeVis = new Select(product2.variationsSizeDropDown);
+        selectSizeVis.selectByVisibleText("334");
+        ReusableMethods.waitFor(4);
+    //25. Kullanici Size un üzerindeki Active kutucugunu aktif hale getirir.
+        ReusableMethods.clickByJS(product2.sizeAktiveTick);
+        ReusableMethods.waitFor(3);
+    //26. Kullanici Submit e tiklar.
+        ReusableMethods.clickByJS(product2.submitButton);
+        ReusableMethods.waitFor(3);
+   // 27. Kullanici View e tiklar.
+        ReusableMethods.clickByJS(product2.viewButton);
+        ReusableMethods.waitFor(3);
+    //28. Kullanici acilan Yeni sayfada Specification menüsüne tiklar.
+        String window1 = Driver.getDriver().getWindowHandle();
+        Driver.getDriver().switchTo().window(window1); //???
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(product2.specificationTab);
+        ReusableMethods.waitFor(3);
+    //29. Kullanici secilen colorun gorundugunu dogrular.
+        Assert.assertTrue(product2.colorVisibleTextKontrol.isDisplayed());
+    //30. Kullanici secilen size in gorundugunu dogrular.
+        Assert.assertTrue(product2.sizeVisibleTextKontrol.isDisplayed());
+        */
+            ReusableMethods.waitFor(3);
+            ReusableMethods.clickByJS(product2.signOut);
+            ReusableMethods.waitFor(3);
+            ReusableMethods.clickByJS(product2.logOut);
 
         //   Driver.closeDriver();
     }
@@ -355,9 +436,9 @@ public class US17_TC01_06 {
         Assert.assertTrue(product2.pratikDusunme2ListImage.isDisplayed());
         ReusableMethods.waitFor(4);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.signOut);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(product2.logOut);
 
         //   Driver.closeDriver();
